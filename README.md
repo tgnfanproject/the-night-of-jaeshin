@@ -1,41 +1,44 @@
-# The Night of Jaeshin — Version 4
+# The Night of Jaeshin — Version 7
 
-This version connects the **Lights Sent** counter to Supabase so the total is shared across all visitors.
+Design refinement build.
 
-## Supabase connection
+## Changes
 
-- Project URL: https://vuawdlsyghfburxhkwwr.supabase.co
-- Publishable key is included in `script.js` (safe for browser use, assuming RLS/function permissions are configured as instructed).
+### Fixed lanterns
+- Visual size reduced to **75%**.
+- Tap target stays the same size for mobile usability.
 
-The site calls:
+### Hero micro-particles
+- The movement now uses a smooth back-and-forth loop instead of snapping to the starting position.
 
-- `get_light_count()`
-- `increment_light()`
+### Send a Light — new layered system
 
-through the Supabase REST RPC endpoint.
+There are now three separate visual layers:
 
-## What to verify after uploading to GitHub Pages
+1. **Static tiny lights**
+   - Drawn on a single canvas, so even 100 dots are inexpensive.
+   - Quantity depends on the shared Supabase total:
+     - 1–50 → 5
+     - 51–100 → 10
+     - 101–200 → 20
+     - 201–400 → 30
+     - 401–700 → 40
+     - 701–1000 → 50
+     - 1001–1500 → 60
+     - 1501–2500 → 70
+     - 2501–4000 → 80
+     - 4001–7000 → 90
+     - 7001+ → 100
 
-1. Open the site in one browser/device.
-2. Confirm the `Lights Sent` number loads from Supabase.
-3. Tap `Send a Light`.
-4. Confirm the number increases by 1.
-5. Open the site on a different device or browser.
-6. Confirm the same shared total appears.
+2. **Decorative drifting lights**
+   - Always starts with **8** drifting particles when the page opens.
+   - They move over a wider distance and slightly faster.
 
-Visible ambient particles are still capped at 24 for performance.
+3. **User-triggered drifting lights**
+   - `Send a Light` launches one particle upward.
+   - Its X position is the same as the future drifting particle.
+   - Only after the rise animation finishes is the new drifting particle added.
+   - Dynamic drifting particles are capped at **18** total.
+   - Once 18 are visible, the oldest drifting particle is removed exactly when the newest one is added.
 
-
-## Version 5 changes
-
-- Persistent ambient-light cap increased from 24 to **36**.
-- A newly sent light now rises first and only becomes a persistent sky light after the rising animation finishes.
-- Existing light positions remain deterministic pseudo-random positions in the upper part of the viewport, so reloading does not cause the same total to scatter unpredictably each time.
-
-
-## Version 6 changes
-
-- Ambient particles drift across a wider area and move slightly faster, making the floating motion easier to notice.
-- The visible particle cap remains **36**.
-- After 36 visible lights are present, a newly sent light still rises into the sky; when it arrives, the **oldest visible ambient light is removed** and the new one is added.
-- On reload, the page displays the most recent 36 light indices rather than the earliest 36, preserving that rolling-window behavior.
+The shared `Lights Sent` number still comes from Supabase.

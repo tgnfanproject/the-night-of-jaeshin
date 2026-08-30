@@ -1,6 +1,6 @@
 // ---------------------------------------------
-// The Night of Jaeshin — Version 4
-// Shared "Lights Sent" counter via Supabase
+// The Night of Jaeshin — Version 7
+// Shared Supabase counter + layered light system
 // ---------------------------------------------
 
 const SUPABASE_URL = "https://vuawdlsyghfburxhkwwr.supabase.co";
@@ -20,8 +20,8 @@ const lanternPosts = [
     id: "JAE-0002",
     username: "Anonymous",
     message:
-      "Happy birthday Jaeshin❤️\nジェシン、誕生日おめでとう！",
-    image: "images/Jae-001.jpeg",
+      "Thank you for showing us that even the lord of the night can learn a gentler kind of light.",
+    image: "",
     scene: 1,
     slot: 2
   },
@@ -115,12 +115,19 @@ const submitButtons = [
 
 const sendLightButton = document.querySelector("#sendLightButton");
 const floatingLights = document.querySelector("#floatingLights");
+const staticLightsCanvas = document.querySelector("#staticLights");
 const lightCountNumber = document.querySelector("#lightCountNumber");
 
-const MAX_VISIBLE_LIGHTS = 36;
+// Layer 1: tiny fixed lights based on the shared total.
+// Layer 2: a small number of decorative drifting lights on load.
+// Layer 3: user-triggered drifting lights, replacing oldest ones after the cap.
+const INITIAL_DYNAMIC_LIGHTS = 8;
+const MAX_DYNAMIC_LIGHTS = 18;
+
 let lastFocusedLantern = null;
 let lightCount = 0;
 let sendingLight = false;
+let dynamicLightSequence = 0;
 
 function createLanternButton(post, coordinates) {
   const button = document.createElement("button");
@@ -154,6 +161,7 @@ function renderLanterns() {
       console.warn("Missing scene or slot for:", post);
       return;
     }
+
     layer.appendChild(createLanternButton(post, coordinates));
   });
 }
@@ -187,6 +195,7 @@ function openLantern(post, button) {
 
 function closeLantern() {
   if (lanternModal.hidden) return;
+
   lanternModal.hidden = true;
   document.body.style.overflow = "";
 
@@ -197,12 +206,10 @@ function closeLantern() {
 }
 
 function openSubmitPreview() {
-  // If the page still contains a dummy submit modal, keep fallback behavior.
-  if (submitModal) {
-    submitModal.hidden = false;
-    document.body.style.overflow = "hidden";
-    submitModal.querySelector(".modal__close")?.focus();
-  }
+  if (!submitModal) return;
+  submitModal.hidden = false;
+  document.body.style.overflow = "hidden";
+  submitModal.querySelector(".modal__close")?.focus();
 }
 
 function closeSubmitPreview() {
@@ -216,70 +223,158 @@ function seededRandom(seed) {
   return x - Math.floor(x);
 }
 
-function createAmbientLight(index) {
+// --------------------------------------------------
+// STATIC LIGHT LAYER
+// --------------------------------------------------
+
+function getStaticLightCount(total) {
+  if (total <= 0) return 0;
+  if (total <= 50) return 5;
+  if (total <= 100) return 10;
+  if (total <= 200) return 20;
+  if (total <= 400) return 30;
+  if (total <= 700) return 40;
+  if (total <= 1000) return 50;
+  if (total <= 1500) return 60;
+  if (total <= 2500) return 70;
+  if (total <= 4000) return 80;
+  if (total <= 7000) return 90;
+  return 100;
+}
+
+function drawStaticLights() {
+  if (!staticLightsCanvas) return;
+
+  const ctx = staticLightsCanvas.getContext("2d");
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  staticLightsCanvas.width = Math.floor(width * dpr);
+  staticLightsCanvas.height = Math.floor(height * dpr);
+  staticLightsCanvas.style.width = `${width}px`;
+  staticLightsCanvas.style.height = `${height}px`;
+
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, width, height);
+
+  const count = getStaticLightCount(lightCount);
+
+  for (let i = 1; i <= count; i += 1) {
+    const x = 5 + seededRandom(i * 2.31) * 90;
+    const y = 5 + seededRandom(i * 4.73) * 48;
+    const radius = 0.7 + seededRandom(i * 6.11) * 1.2;
+    const alpha = 0.25 + seededRandom(i * 1.77) * 0.42;
+
+    ctx.beginPath();
+    ctx.arc((x / 100) * width, (y / 100) * height, radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255, ${125 + Math.floor(seededRandom(i * 8.9) * 65)}, ${92 + Math.floor(seededRandom(i * 9.3) * 55)}, ${alpha})`;
+    ctx.fill();
+
+    if (i % 5 === 0) {
+      ctx.beginPath();
+      ctx.arc((x / 100) * width, (y / 100) * height, radius * 2.8, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(231, 65, 44, ${alpha * 0.16})`;
+      ctx.fill();
+    }
+  }
+}
+
+// --------------------------------------------------
+// DYNAMIC LIGHT LAYER
+// --------------------------------------------------
+
+function makeDynamicLightData(seed) {
+  const x = 8 + seededRandom(seed * 1.13) * 84;
+  const y = 8 + seededRandom(seed * 1.91) * 34;
+  const size = 7 + seededRandom(seed * 2.17) * 8;
+  const duration = 4.8 + seededRandom(seed * 0.67) * 2.8;
+  const driftX = -50 + seededRandom(seed * 1.39) * 100;
+  const driftY = -34 + seededRandom(seed * 2.83) * 68;
+
+  return { x, y, size, duration, driftX, driftY };
+}
+
+function createDynamicLight(seed, lightData = makeDynamicLightData(seed)) {
   const light = document.createElement("span");
   light.className = "floating-light floating-light--ambient";
-  light.dataset.lightIndex = String(index);
+  light.dataset.dynamicOrder = String(++dynamicLightSequence);
 
-  const x = 8 + seededRandom(index * 1.13) * 84;
-  const y = 7 + seededRandom(index * 1.91) * 34;
-  const size = 7 + seededRandom(index * 2.17) * 8;
-
-  // Wider and slightly faster drifting so the motion is clearly visible.
-  const duration = 5.5 + seededRandom(index * 0.67) * 3.5;
-  const driftX = (-42 + seededRandom(index * 1.39) * 84).toFixed(1);
-  const driftY = (-28 + seededRandom(index * 2.83) * 56).toFixed(1);
-
-  light.style.setProperty("--light-x", `${x}%`);
-  light.style.setProperty("--light-y", `${y}%`);
-  light.style.setProperty("--light-size", `${size}px`);
-  light.style.setProperty("--ambient-duration", `${duration}s`);
-  light.style.setProperty("--ambient-drift-x", `${driftX}px`);
-  light.style.setProperty("--ambient-drift-y", `${driftY}px`);
+  light.style.setProperty("--light-x", `${lightData.x}%`);
+  light.style.setProperty("--light-y", `${lightData.y}%`);
+  light.style.setProperty("--light-size", `${lightData.size}px`);
+  light.style.setProperty("--ambient-duration", `${lightData.duration}s`);
+  light.style.setProperty("--ambient-drift-x", `${lightData.driftX.toFixed(1)}px`);
+  light.style.setProperty("--ambient-drift-y", `${lightData.driftY.toFixed(1)}px`);
 
   return light;
 }
 
-function renderAmbientLights() {
+function renderInitialDynamicLights() {
   if (!floatingLights) return;
 
   floatingLights
     .querySelectorAll(".floating-light--ambient")
     .forEach((node) => node.remove());
 
-  const visibleCount = Math.min(lightCount, MAX_VISIBLE_LIGHTS);
-  const firstVisibleIndex = Math.max(1, lightCount - visibleCount + 1);
+  dynamicLightSequence = 0;
 
-  // Show the newest visible lights. This makes the "oldest light fades out,
-  // newest light joins the sky" behavior persist after a reload.
-  for (let index = firstVisibleIndex; index <= lightCount; index += 1) {
-    floatingLights.appendChild(createAmbientLight(index));
-  }
-
-  if (lightCountNumber) {
-    lightCountNumber.textContent = lightCount.toLocaleString();
+  for (let i = 1; i <= INITIAL_DYNAMIC_LIGHTS; i += 1) {
+    // Fixed decorative seeds so the initial scene is stable on reload.
+    floatingLights.appendChild(createDynamicLight(9000 + i));
   }
 }
 
-function createNewLightAnimation(index) {
+function removeOldestDynamicLightIfNeeded() {
+  const dynamicLights = Array.from(
+    floatingLights.querySelectorAll(".floating-light--ambient")
+  );
+
+  if (dynamicLights.length < MAX_DYNAMIC_LIGHTS) return;
+
+  dynamicLights.sort(
+    (a, b) =>
+      Number(a.dataset.dynamicOrder || 0) -
+      Number(b.dataset.dynamicOrder || 0)
+  )[0]?.remove();
+}
+
+function addDynamicLightAfterArrival(seed, lightData) {
+  if (!floatingLights) return;
+  removeOldestDynamicLightIfNeeded();
+  floatingLights.appendChild(createDynamicLight(seed, lightData));
+}
+
+function createRisingLight(seed, lightData, onArrive) {
   if (!floatingLights) return;
 
   const light = document.createElement("span");
   light.className = "floating-light floating-light--new";
 
-  const x = 18 + seededRandom(index * 4.2) * 64;
-  const size = 8 + seededRandom(index * 1.6) * 9;
-  const drift = -35 + seededRandom(index * 3.1) * 70;
-  const endY = 10 + seededRandom(index * 0.79) * 18;
-
-  light.style.setProperty("--light-x", `${x}%`);
-  light.style.setProperty("--light-size", `${size}px`);
-  light.style.setProperty("--light-drift", `${drift}px`);
-  light.style.setProperty("--light-end-y", `${endY}svh`);
+  // The launch X is exactly the same as the future drifting particle's X.
+  light.style.setProperty("--light-x", `${lightData.x}%`);
+  light.style.setProperty("--light-size", `${lightData.size + 1}px`);
+  light.style.setProperty("--target-y-vh", `${lightData.y}svh`);
 
   floatingLights.appendChild(light);
-  light.addEventListener("animationend", () => light.remove());
+
+  light.addEventListener(
+    "animationend",
+    () => {
+      light.remove();
+
+      // Only now does the new drifting light appear.
+      if (typeof onArrive === "function") {
+        onArrive();
+      }
+    },
+    { once: true }
+  );
 }
+
+// --------------------------------------------------
+// SUPABASE SHARED COUNTER
+// --------------------------------------------------
 
 async function callSupabaseFunction(functionName) {
   const response = await fetch(
@@ -307,40 +402,30 @@ async function loadGlobalLightCount() {
   try {
     const result = await callSupabaseFunction("get_light_count");
     lightCount = Number(result) || 0;
-    renderAmbientLights();
+
+    if (lightCountNumber) {
+      lightCountNumber.textContent = lightCount.toLocaleString();
+    }
+
+    drawStaticLights();
+    renderInitialDynamicLights();
   } catch (error) {
     console.error(error);
+
     if (lightCountNumber) {
       lightCountNumber.textContent = "—";
     }
+
+    // Decorative drifting particles still appear if the counter service fails.
+    renderInitialDynamicLights();
   }
-}
-
-function addPersistentAmbientLight(index) {
-  if (!floatingLights) return;
-
-  const ambientLights = Array.from(
-    floatingLights.querySelectorAll(".floating-light--ambient")
-  );
-
-  // Once the cap is reached, remove the oldest visible particle first.
-  if (ambientLights.length >= MAX_VISIBLE_LIGHTS) {
-    ambientLights
-      .sort(
-        (a, b) =>
-          Number(a.dataset.lightIndex || 0) -
-          Number(b.dataset.lightIndex || 0)
-      )[0]
-      ?.remove();
-  }
-
-  floatingLights.appendChild(createAmbientLight(index));
 }
 
 async function sendLight() {
   if (sendingLight) return;
 
   sendingLight = true;
+
   if (sendLightButton) {
     sendLightButton.disabled = true;
   }
@@ -349,21 +434,25 @@ async function sendLight() {
     const result = await callSupabaseFunction("increment_light");
     lightCount = Number(result) || (lightCount + 1);
 
-    // The counter updates immediately, but the persistent particle
-    // appears only after the rising animation reaches the sky.
-    createNewLightAnimation(lightCount, () => {
-      addPersistentAmbientLight(lightCount);
-    });
-
     if (lightCountNumber) {
       lightCountNumber.textContent = lightCount.toLocaleString();
     }
+
+    // Static density updates only if the new total crosses a threshold.
+    drawStaticLights();
+
+    const seed = 100000 + lightCount;
+    const lightData = makeDynamicLightData(seed);
+
+    createRisingLight(seed, lightData, () => {
+      addDynamicLightAfterArrival(seed, lightData);
+    });
   } catch (error) {
     console.error(error);
   } finally {
-    // Short client-side cooldown to prevent accidental rapid double taps.
     window.setTimeout(() => {
       sendingLight = false;
+
       if (sendLightButton) {
         sendLightButton.disabled = false;
       }
@@ -379,8 +468,6 @@ document.querySelectorAll("[data-close-submit]").forEach((button) => {
   button.addEventListener("click", closeSubmitPreview);
 });
 
-// Only attach dummy submit behavior if these are still buttons.
-// In v3 they may already be links to Tally.
 submitButtons.forEach((button) => {
   if (button.tagName === "BUTTON") {
     button.addEventListener("click", openSubmitPreview);
@@ -391,8 +478,13 @@ if (sendLightButton) {
   sendLightButton.addEventListener("click", sendLight);
 }
 
+window.addEventListener("resize", () => {
+  drawStaticLights();
+});
+
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
+
   if (lanternModal && !lanternModal.hidden) closeLantern();
   if (submitModal && !submitModal.hidden) closeSubmitPreview();
 });
