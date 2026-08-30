@@ -21,7 +21,7 @@ const lanternPosts = [
     username: "Anonymous",
     message:
       "Happy birthday Jaeshin❤️\nジェシン、誕生日おめでとう！",
-    image: "",
+    image: "images/Jae-001.jpeg",
     scene: 1,
     slot: 2
   },
