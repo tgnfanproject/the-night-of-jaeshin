@@ -20,7 +20,7 @@ const lanternPosts = [
     id: "JAE-0002",
     username: "Anonymous",
     message:
-      "Thank you for showing us that even the lord of the night can learn a gentler kind of light.",
+      "Happy birthday Jaeshin❤️\nジェシン、誕生日おめでとう！",
     image: "",
     scene: 1,
     slot: 2
