@@ -1,32 +1,26 @@
-# The Night of Jaeshin — Version 1 (v2)
+# The Night of Jaeshin — Version 4
 
-This update includes:
+This version connects the **Lights Sent** counter to Supabase so the total is shared across all visitors.
 
-- softer fade transitions between background scenes
-- adjusted lantern red/blue proportions
-- rougher old-paper texture for the hanji cards
-- a persistent "Send a Light" counter using `localStorage`
-- capped visible ambient particles + total light counter
+## Supabase connection
 
-## Important note about Send a Light
+- Project URL: https://vuawdlsyghfburxhkwwr.supabase.co
+- Publishable key is included in `script.js` (safe for browser use, assuming RLS/function permissions are configured as instructed).
 
-In this static-site version, the light count is saved **per browser/device** using `localStorage`.
+The site calls:
 
-That means:
-- the total persists when the same person closes and reopens the site
-- but it is **not yet shared across all visitors**
+- `get_light_count()`
+- `increment_light()`
 
-For a truly global accumulated total, you will need a backend or external database later.
+through the Supabase REST RPC endpoint.
 
-## Particle behavior
+## What to verify after uploading to GitHub Pages
 
-- Each click adds **1** to the total
-- Visible floating ambient lights are capped at **24**
-- If the total goes above 24, the counter keeps increasing, but the visible ambient lights stay capped
+1. Open the site in one browser/device.
+2. Confirm the `Lights Sent` number loads from Supabase.
+3. Tap `Send a Light`.
+4. Confirm the number increases by 1.
+5. Open the site on a different device or browser.
+6. Confirm the same shared total appears.
 
-
-## Tally form
-
-Both `Light a Lantern` buttons now open the live Tally form in a new tab.
-
-Form: https://tally.so/r/b5J5NE
+Visible ambient particles are still capped at 24 for performance.

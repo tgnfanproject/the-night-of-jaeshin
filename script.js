@@ -1,12 +1,10 @@
 // ---------------------------------------------
-// The Night of Jaeshin — Version 1 (v2 revision)
+// The Night of Jaeshin — Version 4
+// Shared "Lights Sent" counter via Supabase
 // ---------------------------------------------
-// NOTE:
-// This static-site version stores the "Send a Light"
-// total in localStorage on each browser.
-// For a true shared count across all visitors, a
-// backend or external database will be needed later.
-// ---------------------------------------------
+
+const SUPABASE_URL = "https://vuawdlsyghfburxhkwwr.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_-MGW3oqEcuhOVLN1imw2cg_5KurcuBL";
 
 const lanternPosts = [
   {
@@ -109,26 +107,20 @@ const cardImage = document.querySelector("#cardImage");
 const cardMessage = document.querySelector("#cardMessage");
 const cardUsername = document.querySelector("#cardUsername");
 
+const submitModal = document.querySelector("#submitModal");
+const submitButtons = [
+  document.querySelector("#openSubmitButton"),
+  document.querySelector("#openSubmitButtonBottom")
+].filter(Boolean);
 
 const sendLightButton = document.querySelector("#sendLightButton");
 const floatingLights = document.querySelector("#floatingLights");
 const lightCountNumber = document.querySelector("#lightCountNumber");
 
-const STORAGE_KEY = "tnoj-light-count";
 const MAX_VISIBLE_LIGHTS = 24;
-
 let lastFocusedLantern = null;
-let lightCount = readLightCount();
-
-function readLightCount() {
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  const parsed = Number.parseInt(stored || "0", 10);
-  return Number.isFinite(parsed) && parsed >= 0 ? parsed : 0;
-}
-
-function writeLightCount(value) {
-  window.localStorage.setItem(STORAGE_KEY, String(value));
-}
+let lightCount = 0;
+let sendingLight = false;
 
 function createLanternButton(post, coordinates) {
   const button = document.createElement("button");
@@ -204,6 +196,20 @@ function closeLantern() {
   }
 }
 
+function openSubmitPreview() {
+  // If the page still contains a dummy submit modal, keep fallback behavior.
+  if (submitModal) {
+    submitModal.hidden = false;
+    document.body.style.overflow = "hidden";
+    submitModal.querySelector(".modal__close")?.focus();
+  }
+}
+
+function closeSubmitPreview() {
+  if (!submitModal || submitModal.hidden) return;
+  submitModal.hidden = true;
+  document.body.style.overflow = "";
+}
 
 function seededRandom(seed) {
   const x = Math.sin(seed) * 10000;
@@ -232,17 +238,26 @@ function createAmbientLight(index) {
 }
 
 function renderAmbientLights() {
-  floatingLights.innerHTML = "";
+  if (!floatingLights) return;
+
+  floatingLights
+    .querySelectorAll(".floating-light--ambient")
+    .forEach((node) => node.remove());
 
   const visibleCount = Math.min(lightCount, MAX_VISIBLE_LIGHTS);
+
   for (let i = 1; i <= visibleCount; i += 1) {
     floatingLights.appendChild(createAmbientLight(i));
   }
 
-  lightCountNumber.textContent = lightCount.toLocaleString();
+  if (lightCountNumber) {
+    lightCountNumber.textContent = lightCount.toLocaleString();
+  }
 }
 
 function createNewLightAnimation(index) {
+  if (!floatingLights) return;
+
   const light = document.createElement("span");
   light.className = "floating-light floating-light--new";
 
@@ -257,34 +272,103 @@ function createNewLightAnimation(index) {
   light.style.setProperty("--light-end-y", `${endY}svh`);
 
   floatingLights.appendChild(light);
-  light.addEventListener("animationend", () => {
-    light.remove();
-  });
+  light.addEventListener("animationend", () => light.remove());
 }
 
-function sendLight() {
-  lightCount += 1;
-  writeLightCount(lightCount);
-  createNewLightAnimation(lightCount);
+async function callSupabaseFunction(functionName) {
+  const response = await fetch(
+    `${SUPABASE_URL}/rest/v1/rpc/${functionName}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": SUPABASE_PUBLISHABLE_KEY,
+        "Authorization": `Bearer ${SUPABASE_PUBLISHABLE_KEY}`
+      },
+      body: "{}"
+    }
+  );
 
-  if (lightCount <= MAX_VISIBLE_LIGHTS) {
-    floatingLights.appendChild(createAmbientLight(lightCount));
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`${functionName} failed: ${response.status} ${errorText}`);
   }
-  lightCountNumber.textContent = lightCount.toLocaleString();
+
+  return response.json();
+}
+
+async function loadGlobalLightCount() {
+  try {
+    const result = await callSupabaseFunction("get_light_count");
+    lightCount = Number(result) || 0;
+    renderAmbientLights();
+  } catch (error) {
+    console.error(error);
+    if (lightCountNumber) {
+      lightCountNumber.textContent = "—";
+    }
+  }
+}
+
+async function sendLight() {
+  if (sendingLight) return;
+
+  sendingLight = true;
+  if (sendLightButton) {
+    sendLightButton.disabled = true;
+  }
+
+  try {
+    const result = await callSupabaseFunction("increment_light");
+    lightCount = Number(result) || (lightCount + 1);
+
+    createNewLightAnimation(lightCount);
+
+    if (lightCount <= MAX_VISIBLE_LIGHTS) {
+      floatingLights.appendChild(createAmbientLight(lightCount));
+    }
+
+    if (lightCountNumber) {
+      lightCountNumber.textContent = lightCount.toLocaleString();
+    }
+  } catch (error) {
+    console.error(error);
+  } finally {
+    // Short client-side cooldown to prevent accidental rapid double taps.
+    window.setTimeout(() => {
+      sendingLight = false;
+      if (sendLightButton) {
+        sendLightButton.disabled = false;
+      }
+    }, 650);
+  }
 }
 
 document.querySelectorAll("[data-close-modal]").forEach((button) => {
   button.addEventListener("click", closeLantern);
 });
 
+document.querySelectorAll("[data-close-submit]").forEach((button) => {
+  button.addEventListener("click", closeSubmitPreview);
+});
 
+// Only attach dummy submit behavior if these are still buttons.
+// In v3 they may already be links to Tally.
+submitButtons.forEach((button) => {
+  if (button.tagName === "BUTTON") {
+    button.addEventListener("click", openSubmitPreview);
+  }
+});
 
-sendLightButton.addEventListener("click", sendLight);
+if (sendLightButton) {
+  sendLightButton.addEventListener("click", sendLight);
+}
 
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
-  if (!lanternModal.hidden) closeLantern();
+  if (lanternModal && !lanternModal.hidden) closeLantern();
+  if (submitModal && !submitModal.hidden) closeSubmitPreview();
 });
 
 renderLanterns();
-renderAmbientLights();
+loadGlobalLightCount();

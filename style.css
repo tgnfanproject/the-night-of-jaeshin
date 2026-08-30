@@ -726,3 +726,9 @@ footer p { margin: .7rem 0 0; }
     animation-iteration-count: 1 !important;
   }
 }
+
+
+.send-light:disabled {
+  opacity: .6;
+  cursor: wait;
+}
