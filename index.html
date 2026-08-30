@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07101e">
+  <meta name="description" content="The Night of Jaeshin — a fan birthday lantern event.">
+  <title>The Night of Jaeshin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__embers" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <p class="eyebrow">September 1 — September 30</p>
+      <h1>The Night of Jaeshin</h1>
+      <p class="hero__copy">
+        Celebrate the birth of the lord of the night who learned love.
+      </p>
+
+      <div class="hero__actions">
+        <button class="btn btn--primary" id="openSubmitButton" type="button">
+          Light a Lantern
+        </button>
+        <a class="btn btn--ghost" href="#lanterns">See the Lanterns</a>
+      </div>
+    </div>
+
+    <a class="scroll-cue" href="#lanterns" aria-label="Scroll to the lanterns">
+      <span></span>
+    </a>
+  </header>
+
+  <main>
+    <section class="gallery-intro" id="lanterns">
+      <p class="eyebrow">A night made brighter together</p>
+      <h2>See the Lanterns</h2>
+      <p>
+        Tap a lantern to read the messages and see the gifts left for Jaeshin.
+      </p>
+    </section>
+
+    <section class="lantern-scene lantern-scene--one" data-scene="1" aria-label="Lantern scene one">
+      <div class="scene-shade" aria-hidden="true"></div>
+      <div class="lantern-layer" data-lantern-layer="1"></div>
+      <p class="scene-caption">The palace by the water</p>
+    </section>
+
+    <div class="night-divider" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+
+    <section class="lantern-scene lantern-scene--two" data-scene="2" aria-label="Lantern scene two">
+      <div class="scene-shade" aria-hidden="true"></div>
+      <div class="lantern-layer" data-lantern-layer="2"></div>
+      <p class="scene-caption">A warmer corner of the night</p>
+    </section>
+
+    <div class="night-divider" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+
+    <section class="lantern-scene lantern-scene--three" data-scene="3" aria-label="Lantern scene three">
+      <div class="scene-shade" aria-hidden="true"></div>
+      <div class="lantern-layer" data-lantern-layer="3"></div>
+      <p class="scene-caption">One more path beneath the eaves</p>
+    </section>
+
+    <section class="event-note">
+      <p class="eyebrow">The lanterns remain open through September 30</p>
+      <h2>Light the Night</h2>
+      <p>
+        Leave a message, or share an illustration or photo for Jaeshin’s night.
+      </p>
+      <button class="btn btn--primary" id="openSubmitButtonBottom" type="button">
+        Light a Lantern
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#top">Back to the beginning</a>
+    <p>Fan-made birthday project · The Night of Jaeshin</p>
+  </footer>
+
+  <div class="modal" id="lanternModal" role="dialog" aria-modal="true" aria-labelledby="cardUsername" hidden>
+    <button class="modal__backdrop" type="button" data-close-modal aria-label="Close"></button>
+    <article class="hanji-card">
+      <button class="modal__close" type="button" data-close-modal aria-label="Close message">×</button>
+      <div class="hanji-card__seal" aria-hidden="true">燈</div>
+      <img class="hanji-card__image" id="cardImage" src="" alt="" hidden>
+      <div class="hanji-card__body">
+        <p class="hanji-card__message" id="cardMessage"></p>
+        <p class="hanji-card__username" id="cardUsername"></p>
+      </div>
+    </article>
+  </div>
+
+  <div class="modal" id="submitModal" role="dialog" aria-modal="true" aria-labelledby="submitTitle" hidden>
+    <button class="modal__backdrop" type="button" data-close-submit aria-label="Close"></button>
+    <article class="hanji-card hanji-card--small">
+      <button class="modal__close" type="button" data-close-submit aria-label="Close">×</button>
+      <div class="hanji-card__body">
+        <p class="eyebrow">Version 1 preview</p>
+        <h2 id="submitTitle">Light a Lantern</h2>
+        <p>
+          The public submission form will be connected here later.
+          For now, this button is only a preview.
+        </p>
+        <div class="form-preview" aria-hidden="true">
+          <span>Username</span>
+          <span>Message for Jaeshin</span>
+          <span>Illustration / Photo (optional)</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <aside class="light-panel" aria-live="polite">
+    <button class="send-light" id="sendLightButton" type="button">
+      <span class="send-light__icon" aria-hidden="true">✦</span>
+      <span>Send a Light</span>
+    </button>
+    <p class="light-count-label">Lights Sent</p>
+    <p class="light-count-number" id="lightCountNumber">0</p>
+  </aside>
+
+  <div class="floating-lights" id="floatingLights" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
