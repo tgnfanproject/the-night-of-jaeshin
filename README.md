@@ -23,3 +23,10 @@ For a truly global accumulated total, you will need a backend or external databa
 - Each click adds **1** to the total
 - Visible floating ambient lights are capped at **24**
 - If the total goes above 24, the counter keeps increasing, but the visible ambient lights stay capped
+
+
+## Tally form
+
+Both `Light a Lantern` buttons now open the live Tally form in a new tab.
+
+Form: https://tally.so/r/b5J5NE

@@ -109,11 +109,6 @@ const cardImage = document.querySelector("#cardImage");
 const cardMessage = document.querySelector("#cardMessage");
 const cardUsername = document.querySelector("#cardUsername");
 
-const submitModal = document.querySelector("#submitModal");
-const submitButtons = [
-  document.querySelector("#openSubmitButton"),
-  document.querySelector("#openSubmitButtonBottom")
-].filter(Boolean);
 
 const sendLightButton = document.querySelector("#sendLightButton");
 const floatingLights = document.querySelector("#floatingLights");
@@ -209,17 +204,6 @@ function closeLantern() {
   }
 }
 
-function openSubmitPreview() {
-  submitModal.hidden = false;
-  document.body.style.overflow = "hidden";
-  submitModal.querySelector(".modal__close")?.focus();
-}
-
-function closeSubmitPreview() {
-  if (submitModal.hidden) return;
-  submitModal.hidden = true;
-  document.body.style.overflow = "";
-}
 
 function seededRandom(seed) {
   const x = Math.sin(seed) * 10000;
@@ -293,20 +277,13 @@ document.querySelectorAll("[data-close-modal]").forEach((button) => {
   button.addEventListener("click", closeLantern);
 });
 
-document.querySelectorAll("[data-close-submit]").forEach((button) => {
-  button.addEventListener("click", closeSubmitPreview);
-});
 
-submitButtons.forEach((button) => {
-  button.addEventListener("click", openSubmitPreview);
-});
 
 sendLightButton.addEventListener("click", sendLight);
 
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
   if (!lanternModal.hidden) closeLantern();
-  if (!submitModal.hidden) closeSubmitPreview();
 });
 
 renderLanterns();
