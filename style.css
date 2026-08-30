@@ -687,10 +687,27 @@ footer p { margin: .7rem 0 0; }
 
 @keyframes ambientFloat {
   0% {
-    transform: translate3d(0, 0, 0) scale(.92);
+    transform: translate3d(0, 0, 0) scale(.88) rotate(-4deg);
+  }
+  50% {
+    transform:
+      translate3d(
+        calc(var(--ambient-drift-x) * .55),
+        calc(var(--ambient-drift-y) * .35),
+        0
+      )
+      scale(1.08)
+      rotate(3deg);
   }
   100% {
-    transform: translate3d(var(--ambient-drift-x), var(--ambient-drift-y), 0) scale(1.06);
+    transform:
+      translate3d(
+        var(--ambient-drift-x),
+        var(--ambient-drift-y),
+        0
+      )
+      scale(.96)
+      rotate(7deg);
   }
 }
 

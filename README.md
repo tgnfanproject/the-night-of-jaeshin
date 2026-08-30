@@ -24,3 +24,18 @@ through the Supabase REST RPC endpoint.
 6. Confirm the same shared total appears.
 
 Visible ambient particles are still capped at 24 for performance.
+
+
+## Version 5 changes
+
+- Persistent ambient-light cap increased from 24 to **36**.
+- A newly sent light now rises first and only becomes a persistent sky light after the rising animation finishes.
+- Existing light positions remain deterministic pseudo-random positions in the upper part of the viewport, so reloading does not cause the same total to scatter unpredictably each time.
+
+
+## Version 6 changes
+
+- Ambient particles drift across a wider area and move slightly faster, making the floating motion easier to notice.
+- The visible particle cap remains **36**.
+- After 36 visible lights are present, a newly sent light still rises into the sky; when it arrives, the **oldest visible ambient light is removed** and the new one is added.
+- On reload, the page displays the most recent 36 light indices rather than the earliest 36, preserving that rolling-window behavior.
