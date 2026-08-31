@@ -24,7 +24,7 @@
         <a class="btn btn--primary" href="https://tally.so/r/b5J5NE" target="_blank" rel="noopener noreferrer">
           Light a Lantern
         </a>
-        <a class="btn btn--ghost" href="#lanterns">See the Lanterns</a>
+        <a class="btn btn--ghost" href="#lanterns">See Everyone’s Lanterns</a>
       </div>
     </div>
 
@@ -36,36 +36,45 @@
   <main>
     <section class="gallery-intro" id="lanterns">
       <p class="eyebrow">A night made brighter together</p>
-      <h2>See the Lanterns</h2>
+      <h2>See Everyone’s Lanterns</h2>
       <p>
         Tap a lantern to read the messages and see the gifts left for Jaeshin.
       </p>
     </section>
 
-    <section class="lantern-scene lantern-scene--one" data-scene="1" aria-label="Lantern scene one">
-      <div class="scene-shade" aria-hidden="true"></div>
-      <div class="lantern-layer" data-lantern-layer="1"></div>
-      <p class="scene-caption">The palace by the water</p>
+    <section class="lantern-scene" data-scene="1" aria-label="Lantern scene one">
+      <div class="scene-frame">
+        <img class="scene-image" src="images/scene1.png" alt="" aria-hidden="true">
+        <div class="scene-shade" aria-hidden="true"></div>
+        <div class="lantern-layer" data-lantern-layer="1"></div>
+        <p class="scene-caption">The palace by the water</p>
+      </div>
     </section>
 
     <div class="night-divider" aria-hidden="true">
       <span></span><span></span><span></span>
     </div>
 
-    <section class="lantern-scene lantern-scene--two" data-scene="2" aria-label="Lantern scene two">
-      <div class="scene-shade" aria-hidden="true"></div>
-      <div class="lantern-layer" data-lantern-layer="2"></div>
-      <p class="scene-caption">A warmer corner of the night</p>
+    <section class="lantern-scene" data-scene="2" aria-label="Lantern scene two">
+      <div class="scene-frame">
+        <img class="scene-image" src="images/scene2.png" alt="" aria-hidden="true">
+        <div class="scene-shade" aria-hidden="true"></div>
+        <div class="lantern-layer" data-lantern-layer="2"></div>
+        <p class="scene-caption">A warmer corner of the night</p>
+      </div>
     </section>
 
     <div class="night-divider" aria-hidden="true">
       <span></span><span></span><span></span>
     </div>
 
-    <section class="lantern-scene lantern-scene--three" data-scene="3" aria-label="Lantern scene three">
-      <div class="scene-shade" aria-hidden="true"></div>
-      <div class="lantern-layer" data-lantern-layer="3"></div>
-      <p class="scene-caption">One more path beneath the eaves</p>
+    <section class="lantern-scene" data-scene="3" aria-label="Lantern scene three">
+      <div class="scene-frame">
+        <img class="scene-image" src="images/scene3.png" alt="" aria-hidden="true">
+        <div class="scene-shade" aria-hidden="true"></div>
+        <div class="lantern-layer" data-lantern-layer="3"></div>
+        <p class="scene-caption">One more path beneath the eaves</p>
+      </div>
     </section>
 
     <section class="event-note">
@@ -101,8 +110,9 @@
   <aside class="light-panel" aria-live="polite">
     <button class="send-light" id="sendLightButton" type="button">
       <span class="send-light__icon" aria-hidden="true">✦</span>
-      <span>Send a Light</span>
+      <span>Add a Light</span>
     </button>
+    <p class="light-panel__hint">Tap to add your light to the night.</p>
     <p class="light-count-label">Lights Sent</p>
     <p class="light-count-number" id="lightCountNumber">0</p>
   </aside>

@@ -42,3 +42,35 @@ There are now three separate visual layers:
    - Once 18 are visible, the oldest drifting particle is removed exactly when the newest one is added.
 
 The shared `Lights Sent` number still comes from Supabase.
+
+
+## Version 8 changes
+
+### Image-relative lantern coordinates
+Scene backgrounds are now real `<img>` elements rather than CSS `background-image` layers.
+
+This means:
+- the photograph keeps its full aspect ratio,
+- it is not cropped differently on different phones,
+- the lantern layer has exactly the same dimensions as the image,
+- `x` and `y` slot percentages therefore stay attached to the same part of the photograph.
+
+Trade-off:
+- landscape photos no longer fill an entire portrait phone screen vertically.
+- This is intentional: coordinate consistency is prioritized over screen-filling crop behavior.
+
+### Softer scene transitions
+Each image now fades to the dark navy page background at its top and bottom edge.
+The black divider is now clean breathing space between two already-faded image edges, so the photograph should no longer end on a hard straight line.
+
+### Wording
+- `See the Lanterns` → `See Everyone’s Lanterns`
+- `Send a Light` → `Add a Light`
+- Small helper text: `Tap to add your light to the night.`
+
+
+## Version 9 changes
+
+- Replaced Hero and Scene 1–3 with the user's final 9:16 crops (`800 × 1422`).
+- Scene lantern coordinates remain image-relative, so the same percentage positions stay attached to the same photographic details across phone sizes.
+- A lightweight CSS night/warm filter is applied to the gallery scene images without modifying the source crops themselves.
