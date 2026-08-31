@@ -74,3 +74,12 @@ The black divider is now clean breathing space between two already-faded image e
 - Replaced Hero and Scene 1–3 with the user's final 9:16 crops (`800 × 1422`).
 - Scene lantern coordinates remain image-relative, so the same percentage positions stay attached to the same photographic details across phone sizes.
 - A lightweight CSS night/warm filter is applied to the gallery scene images without modifying the source crops themselves.
+
+
+## Version 10 changes
+
+- Replaced Hero + Scene 1–3 with the latest processed night-background images.
+- Replaced the CSS-drawn fixed lantern with an image asset:
+  - `images/lantern.png`
+- The fixed lantern is still animated with the same gentle sway and glow behavior, but its appearance now matches the real rectangular red/blue lantern reference more closely.
+- Lantern placement still uses image-relative coordinates.

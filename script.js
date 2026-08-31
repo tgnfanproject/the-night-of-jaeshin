@@ -143,8 +143,13 @@ function createLanternButton(post, coordinates) {
   button.innerHTML = `
     <span class="lantern" aria-hidden="true">
       <span class="lantern__glow"></span>
-      <span class="lantern__top"></span>
-      <span class="lantern__bottom"></span>
+      <img
+        class="lantern__img"
+        src="images/lantern.png"
+        alt=""
+        draggable="false"
+        loading="lazy"
+      >
     </span>
   `;
 
