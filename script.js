@@ -40,8 +40,8 @@ const lanternPosts = [
     message:
       "A small light for the one who found love in the human world.",
     image: "",
-    scene: 2,
-    slot: 1
+    scene: 1,
+    slot: 4
   },
   {
     id: "JAE-0005",
@@ -49,8 +49,8 @@ const lanternPosts = [
     message:
       "To Jaeshin — may you always find your way back to warmth.",
     image: "images/sample-photo-2.jpg",
-    scene: 2,
-    slot: 2
+    scene: 1,
+    slot: 5
   },
   {
     id: "JAE-0006",
@@ -58,8 +58,8 @@ const lanternPosts = [
     message:
       "Happy birthday to the ruler of the night, and to the man who learned how bright love could be.",
     image: "",
-    scene: 2,
-    slot: 3
+    scene: 1,
+    slot: 6
   },
   {
     id: "JAE-0007",
@@ -67,8 +67,8 @@ const lanternPosts = [
     message:
       "Sending one more lantern into your night. Happy birthday, Jaeshin.",
     image: "",
-    scene: 3,
-    slot: 1
+    scene: 1,
+    slot: 7
   },
   {
     id: "JAE-0008",
@@ -76,17 +76,34 @@ const lanternPosts = [
     message:
       "May the night be kind to you this year.",
     image: "",
-    scene: 3,
-    slot: 2
+    scene: 1,
+    slot: 8
+  },
+  {
+    id: "JAE-0009",
+    username: "Anonymous",
+    message:
+      "May the night be kind to you this year.",
+    image: "",
+    scene: 1,
+    slot: 9
+  },
+  {
+    id: "JAE-0010",
+    username: "Anonymous",
+    message:
+      "May the night be kind to you this year.",
+    image: "",
+    scene: 1,
+    slot: 10
   }
 ];
 
 const slotMap = {
   1: [
-    { x: 18, y: 39 }, { x: 35, y: 35 }, { x: 54, y: 36 },
-    { x: 72, y: 40 }, { x: 87, y: 44 }, { x: 26, y: 53 },
-    { x: 47, y: 50 }, { x: 66, y: 53 }, { x: 82, y: 58 },
-    { x: 18, y: 67 }, { x: 42, y: 68 }, { x: 69, y: 70 }
+    { x: 52, y: 28 }, { x: 64, y: 28 }, { x: 78, y: 28 }, { x: 90, y: 28 },
+    { x: 40, y: 42, scale: 0.9 }, { x: 52, y: 42, scale: 0.9 }, { x: 63, y: 42, scale: 0.9 }, { x: 74, y: 42, scale: 0.9 },
+    { x: 18, y: 80, scale: 1.2, ground: true }, { x: 42, y: 85, scale: 1.2, ground: true }
   ],
   2: [
     { x: 68, y: 28 }, { x: 79, y: 34 }, { x: 87, y: 41 },
