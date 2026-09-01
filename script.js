@@ -96,26 +96,169 @@ const lanternPosts = [
     image: "",
     scene: 1,
     slot: 10
+  },
+
+  {
+    id: "JAE-0011",
+    username: "Hana",
+    message:
+      "Happy birthday, Jaeshin.\nMay this night be filled with all the warmth you learned to treasure.",
+    image: "",
+    scene: 2,
+    slot: 1
+  },
+  {
+    id: "JAE-0012",
+    username: "Anonymous",
+    message:
+      "Thank you for showing us that even the lord of the night can learn a gentler kind of light.",
+    image: "",
+    scene: 2,
+    slot: 2
+  },
+  {
+    id: "JAE-0013",
+    username: "Moonlit Reader",
+    message:
+      "Happy birthday! I hope Nok stays by your side through every night still to come.",
+    image: "images/sample-photo-1.jpg",
+    scene: 2,
+    slot: 3
+  },
+  {
+    id: "JAE-0014",
+    username: "Lantern Keeper",
+    message:
+      "A small light for the one who found love in the human world.",
+    image: "",
+    scene: 2,
+    slot: 4
+  },
+  {
+    id: "JAE-0015",
+    username: "Anonymous",
+    message:
+      "To Jaeshin — may you always find your way back to warmth.",
+    image: "images/sample-photo-2.jpg",
+    scene: 2,
+    slot: 5
+  },
+  {
+    id: "JAE-0016",
+    username: "Night Traveler",
+    message:
+      "Happy birthday to the ruler of the night, and to the man who learned how bright love could be.",
+    image: "",
+    scene: 2,
+    slot: 6
+  },
+  {
+    id: "JAE-0017",
+    username: "A Fan From Afar",
+    message:
+      "Sending one more lantern into your night. Happy birthday, Jaeshin.",
+    image: "",
+    scene: 2,
+    slot: 7
+  },
+  {
+    id: "JAE-0018",
+    username: "Anonymous",
+    message:
+      "May the night be kind to you this year.",
+    image: "",
+    scene: 2,
+    slot: 8
+  },
+  {
+    id: "JAE-0019",
+    username: "Anonymous",
+    message:
+      "May the night be kind to you this year.",
+    image: "",
+    scene: 2,
+    slot: 9
+  },
+  {
+    id: "JAE-0020",
+    username: "Anonymous",
+    message:
+      "May the night be kind to you this year.",
+    image: "",
+    scene: 2,
+    slot: 10
+  },
+
+  {
+    id: "JAE-0021",
+    username: "Hana",
+    message:
+      "Happy birthday, Jaeshin.\nMay this night be filled with all the warmth you learned to treasure.",
+    image: "",
+    scene: 3,
+    slot: 1
+  },
+  {
+    id: "JAE-0022",
+    username: "Anonymous",
+    message:
+      "Thank you for showing us that even the lord of the night can learn a gentler kind of light.",
+    image: "",
+    scene: 3,
+    slot: 2
+  },
+  {
+    id: "JAE-0023",
+    username: "Moonlit Reader",
+    message:
+      "Happy birthday! I hope Nok stays by your side through every night still to come.",
+    image: "images/sample-photo-1.jpg",
+    scene: 3,
+    slot: 3
+  },
+  {
+    id: "JAE-0024",
+    username: "Lantern Keeper",
+    message:
+      "A small light for the one who found love in the human world.",
+    image: "",
+    scene: 3,
+    slot: 4
+  },
+  {
+    id: "JAE-0025",
+    username: "Anonymous",
+    message:
+      "To Jaeshin — may you always find your way back to warmth.",
+    image: "images/sample-photo-2.jpg",
+    scene: 3,
+    slot: 5
+  },
+  {
+    id: "JAE-0026",
+    username: "Night Traveler",
+    message:
+      "Happy birthday to the ruler of the night, and to the man who learned how bright love could be.",
+    image: "",
+    scene: 3,
+    slot: 6
   }
 ];
 
 const slotMap = {
   1: [
     { x: 52, y: 28 }, { x: 64, y: 28 }, { x: 78, y: 28 }, { x: 90, y: 28 },
-    { x: 40, y: 42, scale: 0.9 }, { x: 52, y: 42, scale: 0.9 }, { x: 63, y: 42, scale: 0.9 }, { x: 74, y: 42, scale: 0.9 },
+    { x: 40, y: 42, scale: 0.9 }, { x: 52, y: 43, scale: 0.9 }, { x: 63, y: 44, scale: 0.9 }, { x: 74, y: 45, scale: 0.9 },
     { x: 18, y: 80, scale: 1.2, ground: true }, { x: 42, y: 85, scale: 1.2, ground: true }
   ],
   2: [
-    { x: 68, y: 28 }, { x: 79, y: 34 }, { x: 87, y: 41 },
-    { x: 54, y: 40 }, { x: 43, y: 47 }, { x: 69, y: 52 },
-    { x: 82, y: 57 }, { x: 56, y: 61 }, { x: 37, y: 64 },
-    { x: 76, y: 69 }, { x: 24, y: 70 }, { x: 53, y: 76 }
+    { x: 50, y: 32, scale: 0.8 }, { x: 63, y: 34, scale: 0.8 }, { x: 75, y: 36, scale: 0.8 }, { x: 87, y: 38, scale: 0.8 },
+    { x: 8, y: 60, ground: true }, { x: 24, y: 60, ground: true }, { x: 40, y: 60, ground: true }, 
+    { x: 56, y: 60, ground: true }, { x: 73, y: 60, ground: true }, { x: 90, y: 60, ground: true }
   ],
   3: [
-    { x: 13, y: 26 }, { x: 26, y: 34 }, { x: 39, y: 38 },
-    { x: 52, y: 42 }, { x: 64, y: 46 }, { x: 76, y: 50 },
-    { x: 87, y: 56 }, { x: 20, y: 57 }, { x: 36, y: 62 },
-    { x: 54, y: 66 }, { x: 71, y: 69 }, { x: 84, y: 74 }
+    { x: 7, y: 38 }, { x: 21, y: 34 }, { x: 38, y: 30 },
+    { x: 50, y: 43 }, { x: 73, y: 40 }, { x: 95, y: 37 }
   ]
 };
 
