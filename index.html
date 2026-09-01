@@ -12,19 +12,27 @@
   <header class="hero" id="top">
     <div class="hero__veil" aria-hidden="true"></div>
     <div class="hero__embers" aria-hidden="true"></div>
+    <div class="hero-lantern" aria-hidden="true">
+      <span class="hero-lantern__glow"></span>
+      <img src="images/lantern.png" alt="" draggable="false">
+    </div>
 
     <div class="hero__content">
       <p class="eyebrow">September 1 — September 30</p>
       <h1>The Night of Jaeshin</h1>
       <p class="hero__copy">
-        Celebrate the birth of the lord of the night who learned love.
+        Light the night with love for Jaeshin.
       </p>
 
       <div class="hero__actions">
         <a class="btn btn--primary" href="https://tally.so/r/b5J5NE" target="_blank" rel="noopener noreferrer">
-          Light a Lantern
+          <span class="btn__label">Light a Lantern</span>
+          <span class="btn__jp" lang="ja">ランタンを送る</span>
         </a>
-        <a class="btn btn--ghost" href="#lanterns">See Everyone’s Lanterns</a>
+        <a class="btn btn--ghost" href="#lanterns">
+          <span class="btn__label">See Everyone’s Lanterns</span>
+          <span class="btn__jp" lang="ja">みんなのランタンを見る</span>
+        </a>
       </div>
     </div>
 
@@ -37,9 +45,47 @@
     <section class="gallery-intro" id="lanterns">
       <p class="eyebrow">A night made brighter together</p>
       <h2>See Everyone’s Lanterns</h2>
-      <p>
-        Tap a lantern to read the messages and see the gifts left for Jaeshin. The glow hints at what is waiting inside.
+      <p class="gallery-intro__copy">
+        Tap a lantern to see the celebration inside.
       </p>
+      <p class="jp-sub gallery-intro__jp" lang="ja">
+        ランタンをタップすると、中のお祝いを見ることができます。
+      </p>
+
+      <div class="lantern-legend" aria-label="Lantern glow guide">
+        <div class="lantern-legend__item">
+          <span class="legend-lantern legend-lantern--message" aria-hidden="true">
+            <span class="legend-lantern__glow"></span>
+            <img src="images/lantern.png" alt="" draggable="false">
+          </span>
+          <span class="lantern-legend__text">
+            <span>Message</span>
+            <span lang="ja">メッセージ</span>
+          </span>
+        </div>
+
+        <div class="lantern-legend__item">
+          <span class="legend-lantern legend-lantern--illustration" aria-hidden="true">
+            <span class="legend-lantern__glow"></span>
+            <img src="images/lantern.png" alt="" draggable="false">
+          </span>
+          <span class="lantern-legend__text">
+            <span>Illustration</span>
+            <span lang="ja">イラスト</span>
+          </span>
+        </div>
+
+        <div class="lantern-legend__item">
+          <span class="legend-lantern legend-lantern--photo" aria-hidden="true">
+            <span class="legend-lantern__glow"></span>
+            <img src="images/lantern.png" alt="" draggable="false">
+          </span>
+          <span class="lantern-legend__text">
+            <span>Photo</span>
+            <span lang="ja">写真</span>
+          </span>
+        </div>
+      </div>
     </section>
 
     <section class="lantern-scene" data-scene="1" aria-label="Lantern scene one">
@@ -47,7 +93,7 @@
         <img class="scene-image" src="images/scene1.png" alt="" aria-hidden="true">
         <div class="scene-shade" aria-hidden="true"></div>
         <div class="lantern-layer" data-lantern-layer="1"></div>
-        <p class="scene-caption">The palace by the water</p>
+        <p class="scene-caption">The Market We Snuck Out to at Night</p>
       </div>
     </section>
 
@@ -60,7 +106,7 @@
         <img class="scene-image" src="images/scene2.png" alt="" aria-hidden="true">
         <div class="scene-shade" aria-hidden="true"></div>
         <div class="lantern-layer" data-lantern-layer="2"></div>
-        <p class="scene-caption">A warmer corner of the night</p>
+        <p class="scene-caption">“You’re Stronger Than Anyone Else.”</p>
       </div>
     </section>
 
@@ -73,7 +119,7 @@
         <img class="scene-image" src="images/scene3.png" alt="" aria-hidden="true">
         <div class="scene-shade" aria-hidden="true"></div>
         <div class="lantern-layer" data-lantern-layer="3"></div>
-        <p class="scene-caption">One more path beneath the eaves</p>
+        <p class="scene-caption">The Road Back to Nok’s Quarters</p>
       </div>
     </section>
 
@@ -83,15 +129,19 @@
       <p>
         Leave a message, or share an illustration or photo for Jaeshin’s night.
       </p>
+      <p class="jp-sub event-note__jp" lang="ja">
+        一言だけのメッセージや、お写真一枚からでも、ぜひお気軽にお送りください。
+      </p>
       <a class="btn btn--primary" href="https://tally.so/r/b5J5NE" target="_blank" rel="noopener noreferrer">
-        Light a Lantern
+        <span class="btn__label">Light a Lantern</span>
+        <span class="btn__jp" lang="ja">ランタンを送る</span>
       </a>
     </section>
   </main>
 
   <footer>
     <a href="#top">Back to the beginning</a>
-    <p>Fan-made birthday project · The Night of Jaeshin</p>
+    <p>Fan-made birthday project for Jaeshin from <em>The Ghost’s Nocturne</em>.</p>
   </footer>
 
   <div class="modal" id="lanternModal" role="dialog" aria-modal="true" aria-labelledby="cardUsername" hidden>
@@ -128,11 +178,16 @@
   <aside class="light-panel" aria-live="polite">
     <button class="send-light" id="sendLightButton" type="button">
       <span class="send-light__icon" aria-hidden="true">✦</span>
-      <span>Add a Light</span>
+      <span class="send-light__copy">
+        <span class="send-light__label">Add a Light</span>
+        <span class="send-light__jp" lang="ja">灯りをひとつ増やす</span>
+      </span>
     </button>
     <p class="light-panel__hint">Tap to add your light to the night.</p>
-    <p class="light-count-label">Lights Sent</p>
-    <p class="light-count-number" id="lightCountNumber">0</p>
+    <div class="light-count">
+      <p class="light-count-label">Lights Sent</p>
+      <p class="light-count-number" id="lightCountNumber">0</p>
+    </div>
   </aside>
 
   <canvas class="static-lights" id="staticLights" aria-hidden="true"></canvas>

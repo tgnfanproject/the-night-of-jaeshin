@@ -142,3 +142,21 @@ The rising particle now ends at the same Y coordinate as the dynamic particle th
   - Add a Light stopped responding,
   - the Supabase counter stayed visually at 0.
 - No Supabase data was reset; the shared counter should load normally again after this fix.
+
+
+## Version 13 — final design pass
+
+- Hero tagline: `Light the night with love for Jaeshin.`
+- Added one decorative glowing lantern to the upper-right area of the Hero.
+- Shifted primary CTA buttons slightly toward warm vermilion/orange-red.
+- Added subtle Japanese secondary labels beneath the main English button labels.
+- Replaced the long content-type explanation with a three-item visual lantern legend:
+  Message / Illustration / Photo.
+- Added a small Japanese explanatory line under the lantern gallery intro.
+- Added a Japanese reassurance line near the final submission CTA.
+- Footer now reads: `Fan-made birthday project for Jaeshin from The Ghost’s Nocturne.`
+- Grouped `Lights Sent` tightly with the numeric total.
+- Updated scene captions to:
+  - `The Market We Snuck Out to at Night`
+  - `“You’re Stronger Than Anyone Else.”`
+  - `The Road Back to Nok’s Quarters`

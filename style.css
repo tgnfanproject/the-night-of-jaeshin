@@ -139,12 +139,12 @@ h2 { font-size: clamp(2rem, 8vw, 3.2rem); }
 
 .btn--primary {
   color: #fff8f2;
-  background: linear-gradient(180deg, rgba(180, 39, 48, .98), rgba(105, 15, 27, .98));
-  border-color: rgba(255, 151, 121, .38);
+  background: linear-gradient(180deg, rgba(194, 67, 43, .98), rgba(130, 34, 29, .98));
+  border-color: rgba(255, 168, 126, .42);
   box-shadow:
-    0 0 0 1px rgba(255,255,255,.03) inset,
-    0 10px 34px rgba(135, 24, 29, .32),
-    0 0 28px rgba(218, 58, 43, .14);
+    0 0 0 1px rgba(255,255,255,.04) inset,
+    0 10px 34px rgba(142, 49, 31, .31),
+    0 0 28px rgba(226, 91, 51, .15);
 }
 
 .btn--ghost {
@@ -904,4 +904,244 @@ footer p { margin: .7rem 0 0; }
   color: rgba(232, 220, 214, .74);
   font-size: .68rem;
   line-height: 1.55;
+}
+
+
+/* -----------------------------
+   V13 — final visual refinements
+   ----------------------------- */
+
+.jp-sub,
+.btn__jp,
+.send-light__jp,
+.lantern-legend__text span:last-child {
+  font-family:
+    "Yu Mincho",
+    "YuMincho",
+    "Hiragino Mincho ProN",
+    "Hiragino Mincho Pro",
+    "Noto Serif JP",
+    serif;
+  font-weight: 400;
+}
+
+.btn {
+  flex-direction: column;
+  gap: .08rem;
+  line-height: 1.2;
+}
+
+.btn__label {
+  display: block;
+}
+
+.btn__jp {
+  display: block;
+  margin-top: .18rem;
+  font-size: .68rem;
+  letter-spacing: .08em;
+  opacity: .78;
+}
+
+.jp-sub {
+  font-size: .76rem;
+  letter-spacing: .045em;
+  line-height: 1.75;
+}
+
+.gallery-intro__copy {
+  margin-bottom: 0 !important;
+}
+
+.gallery-intro__jp {
+  max-width: 31rem;
+  margin: .45rem auto 0;
+  color: rgba(225, 216, 208, .72);
+}
+
+.event-note__jp {
+  max-width: 31rem;
+  margin: .45rem auto 0 !important;
+  color: rgba(225, 216, 208, .72) !important;
+}
+
+/* One decorative lantern in the hero sky. */
+.hero-lantern {
+  position: absolute;
+  z-index: 0;
+  right: clamp(1.15rem, 8vw, 4rem);
+  top: clamp(5.6rem, 17svh, 9.5rem);
+  width: 31px;
+  height: 86px;
+  transform: rotate(7deg);
+  transform-origin: 50% 0;
+  pointer-events: none;
+  animation: heroLanternFloat 6.8s ease-in-out infinite alternate;
+}
+
+.hero-lantern img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 7px rgba(247, 83, 53, .62))
+    drop-shadow(0 0 20px rgba(223, 57, 37, .35));
+}
+
+.hero-lantern__glow {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 8px;
+  width: 58px;
+  height: 72px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 137, 84, .68) 0%,
+    rgba(235, 70, 42, .31) 43%,
+    transparent 73%
+  );
+  mix-blend-mode: screen;
+  animation: glowPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes heroLanternFloat {
+  from { transform: rotate(5deg) translateY(-2px); }
+  to   { transform: rotate(9deg) translateY(3px); }
+}
+
+/* Visual legend for lantern content types. */
+.lantern-legend {
+  width: min(100%, 34rem);
+  margin: 1.65rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .55rem;
+}
+
+.lantern-legend__item {
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: .45rem;
+  padding: .75rem .25rem .55rem;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.legend-lantern {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 45px;
+}
+
+.legend-lantern img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px rgba(255, 94, 63, .35));
+}
+
+.legend-lantern__glow {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 5px;
+  width: 38px;
+  height: 35px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  mix-blend-mode: screen;
+}
+
+.legend-lantern--message .legend-lantern__glow {
+  background: radial-gradient(ellipse, rgba(255,126,86,.72), rgba(229,61,42,.34) 46%, transparent 74%);
+}
+
+.legend-lantern--illustration .legend-lantern__glow {
+  background: radial-gradient(ellipse, rgba(233,112,206,.74), rgba(162,72,181,.36) 46%, transparent 74%);
+}
+
+.legend-lantern--photo .legend-lantern__glow {
+  background: radial-gradient(ellipse, rgba(255,157,106,.74), rgba(211,92,77,.36) 46%, transparent 74%);
+}
+
+.lantern-legend__text {
+  display: grid;
+  gap: .08rem;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.lantern-legend__text span:first-child {
+  color: rgba(247, 238, 230, .9);
+  font-size: .72rem;
+  letter-spacing: .035em;
+}
+
+.lantern-legend__text span:last-child {
+  color: rgba(210, 202, 195, .65);
+  font-size: .6rem;
+  letter-spacing: .05em;
+}
+
+/* Keep the total label visually attached to the number. */
+.light-count {
+  display: grid;
+  justify-items: center;
+  gap: .05rem;
+  margin-top: .7rem;
+}
+
+.light-count .light-count-label,
+.light-count .light-count-number {
+  margin: 0;
+}
+
+.send-light {
+  align-items: center;
+}
+
+.send-light__copy {
+  display: grid;
+  gap: .04rem;
+  text-align: left;
+  line-height: 1.12;
+}
+
+.send-light__label {
+  display: block;
+}
+
+.send-light__jp {
+  display: block;
+  margin-top: .08rem;
+  font-size: .58rem;
+  letter-spacing: .06em;
+  opacity: .7;
+}
+
+@media (max-width: 380px) {
+  .hero-lantern {
+    right: 1rem;
+    top: 16svh;
+    width: 28px;
+    height: 79px;
+  }
+
+  .lantern-legend {
+    gap: .2rem;
+  }
+
+  .lantern-legend__text span:first-child {
+    font-size: .66rem;
+  }
 }
