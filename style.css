@@ -257,7 +257,7 @@ h2 { font-size: clamp(2rem, 8vw, 3.2rem); }
   display: block;
   width: 100%;
   height: auto;
-  filter: brightness(1.04);
+  filter: brightness(0.8);
   user-select: none;
   -webkit-user-drag: none;
 }
