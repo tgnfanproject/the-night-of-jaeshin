@@ -140,16 +140,41 @@ function createLanternButton(post, coordinates) {
   button.setAttribute("aria-expanded", "false");
   button.dataset.postId = post.id;
 
+  // Optional slot settings:
+  // scale: 1 = current V10 size, 1.1 = 10% larger, 0.9 = 10% smaller
+  // sway: false = do not swing
+  // cord: false = hide the thin hanging cord
+  // ground: true = convenience setting; disables both sway and cord
+  const scale = Number.isFinite(Number(coordinates.scale))
+    ? Number(coordinates.scale)
+    : 1;
+
+  const isGround = coordinates.ground === true;
+  const shouldSway = isGround ? false : coordinates.sway !== false;
+  const showCord = isGround ? false : coordinates.cord !== false;
+
+  const lanternClasses = [
+    "lantern",
+    shouldSway ? "" : "lantern--static",
+    showCord ? "" : "lantern--no-cord"
+  ].filter(Boolean).join(" ");
+
   button.innerHTML = `
-    <span class="lantern" aria-hidden="true">
-      <span class="lantern__glow"></span>
-      <img
-        class="lantern__img"
-        src="images/lantern.png"
-        alt=""
-        draggable="false"
-        loading="lazy"
-      >
+    <span
+      class="lantern-scale"
+      aria-hidden="true"
+      style="--lantern-scale:${scale}"
+    >
+      <span class="${lanternClasses}">
+        <span class="lantern__glow"></span>
+        <img
+          class="lantern__img"
+          src="images/lantern.png"
+          alt=""
+          draggable="false"
+          loading="lazy"
+        >
+      </span>
     </span>
   `;
 
@@ -356,7 +381,8 @@ function createRisingLight(seed, lightData, onArrive) {
   const light = document.createElement("span");
   light.className = "floating-light floating-light--new";
 
-  // The launch X is exactly the same as the future drifting particle's X.
+  // The launch X and arrival Y match the future drifting particle's
+  // initial position, so it looks like the launched light becomes that particle.
   light.style.setProperty("--light-x", `${lightData.x}%`);
   light.style.setProperty("--light-size", `${lightData.size + 1}px`);
   light.style.setProperty("--target-y-vh", `${lightData.y}svh`);

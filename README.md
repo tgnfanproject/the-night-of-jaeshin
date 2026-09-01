@@ -83,3 +83,43 @@ The black divider is now clean breathing space between two already-faded image e
   - `images/lantern.png`
 - The fixed lantern is still animated with the same gentle sway and glow behavior, but its appearance now matches the real rectangular red/blue lantern reference more closely.
 - Lantern placement still uses image-relative coordinates.
+
+
+## Version 11 changes
+
+### Per-slot lantern controls
+Each `slotMap` entry may now include optional settings:
+
+```js
+{ x: 35, y: 35, scale: 1.1 }
+```
+
+- `scale: 1` = current V10 lantern size
+- `scale: 1.1` = 10% larger
+- `scale: 0.9` = 10% smaller
+
+For a non-swinging lantern:
+
+```js
+{ x: 35, y: 35, sway: false }
+```
+
+To hide the hanging cord:
+
+```js
+{ x: 35, y: 35, cord: false }
+```
+
+For a floor-standing lantern, use the convenience option:
+
+```js
+{ x: 35, y: 72, scale: 1.05, ground: true }
+```
+
+`ground: true` automatically disables sway and hides the upper cord.
+
+### Background brightness
+The old darkening filter was removed. The already-processed night images now receive only a very small `brightness(1.04)` lift. Scene-wide dark overlays were removed; only the top/bottom transition fades remain.
+
+### Add a Light arrival
+The rising particle now ends at the same Y coordinate as the dynamic particle that appears after it, as well as using the same X coordinate.
