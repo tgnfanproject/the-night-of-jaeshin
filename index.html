@@ -49,7 +49,8 @@
         Tap a lantern to see the celebration inside.
       </p>
       <p class="jp-sub gallery-intro__jp" lang="ja">
-        ランタンをタップすると、中のお祝いを見ることができます。
+        <span>ランタンをタップすると、</span>
+        <span>中のお祝いを見ることができます。</span>
       </p>
 
       <div class="lantern-legend" aria-label="Lantern glow guide">
@@ -141,7 +142,10 @@
 
   <footer>
     <a href="#top">Back to the beginning</a>
-    <p>Fan-made birthday project for Jaeshin from <em>The Ghost’s Nocturne</em>.</p>
+    <p class="footer-credit">
+      <span>Fan-made birthday project for Jaeshin</span>
+      <span>from <em>The Ghost’s Nocturne</em>.</span>
+    </p>
   </footer>
 
   <div class="modal" id="lanternModal" role="dialog" aria-modal="true" aria-labelledby="cardUsername" hidden>
@@ -155,7 +159,11 @@
       <p class="hanji-card__image-hint" id="cardImageHint" hidden>Tap image to enlarge</p>
       <div class="hanji-card__body">
         <p class="hanji-card__message" id="cardMessage"></p>
-        <p class="hanji-card__username" id="cardUsername"></p>
+        <a class="hanji-card__link" id="cardLink" href="" target="_blank" rel="noopener noreferrer" hidden></a>
+        <div class="hanji-card__credit">
+          <p class="hanji-card__username" id="cardUsername"></p>
+          <a class="hanji-card__handle" id="cardHandle" href="" target="_blank" rel="noopener noreferrer" hidden></a>
+        </div>
       </div>
     </article>
   </div>
@@ -165,6 +173,7 @@
     <button class="image-lightbox__backdrop" type="button" data-close-lightbox aria-label="Close image"></button>
     <div class="image-lightbox__panel">
       <button class="image-lightbox__close" type="button" data-close-lightbox aria-label="Close image">×</button>
+      <span class="image-lightbox__close-hint" aria-hidden="true">Close</span>
       <img class="image-lightbox__image" id="lightboxImage" src="" alt="">
       <p class="image-lightbox__credit" id="lightboxCredit"></p>
       <p class="image-lightbox__rights">
@@ -180,7 +189,7 @@
       <span class="send-light__icon" aria-hidden="true">✦</span>
       <span class="send-light__copy">
         <span class="send-light__label">Add a Light</span>
-        <span class="send-light__jp" lang="ja">灯りをひとつ増やす</span>
+        <span class="send-light__jp" lang="ja">灯りを増やす</span>
       </span>
     </button>
     <p class="light-panel__hint">Tap to add your light to the night.</p>

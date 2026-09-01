@@ -160,3 +160,23 @@ The rising particle now ends at the same Y coordinate as the dynamic particle th
   - `The Market We Snuck Out to at Night`
   - `“You’re Stronger Than Anyone Else.”`
   - `The Road Back to Nok’s Quarters`
+
+
+## Version 14 — publication refinements
+
+- Removed unused legacy image assets from `images/`.
+- Added a localStorage fallback for the last successfully loaded Supabase light count.
+- Increased content-type color separation:
+  - Message = red-orange
+  - Illustration = stronger violet
+  - Photo = amber-gold
+- Restored the message-card close button to the upper-right and kept `축하` at upper-left.
+- Strengthened the full-screen image close affordance.
+- Added optional public `handle` / `handleUrl` support beneath the display name.
+- Handles render smaller and more subtly than the display name.
+- Returned Add a Light to the horizontal star + two-line text layout.
+- Japanese label is now `灯りを増やす`.
+- Forced the gallery Japanese explanation and footer credit into intentional two-line layouts.
+- Replaced publication sample content and images.
+- Added optional post `link` / `linkLabel` support.
+- Empty messages are hidden cleanly.

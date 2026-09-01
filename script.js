@@ -10,8 +10,10 @@ const lanternPosts = [
   {
     id: "JAE-0001",
     username: "Hana",
+    handle: "@logofhana",
+    handleUrl: "https://x.com/logofhana",
     message:
-      "Happy birthday, Jaeshin.\nMay this night be filled with all the warmth you learned to treasure.",
+      "Happy birthday, Jaeshin!\\n何百年、何千年を歩むあなたの人生が、この先も祝福で満ちていますように",
     image: "",
     type: "message",
     scene: 1,
@@ -19,20 +21,24 @@ const lanternPosts = [
   },
   {
     id: "JAE-0002",
-    username: "Moonlit Reader",
-    message:
-      "Happy birthday! I hope Nok stays by your side through every night still to come.",
-    image: "images/sample-photo-1.jpg",
+    username: "The Ghost’s Nocturne",
+    handle: "",
+    handleUrl: "",
+    message: "",
+    link: "https://www.lezhinus.com/en/comic/ghost_nocturne",
+    linkLabel: "Read The Ghost’s Nocturne →",
+    image: "images/sample_1.jpeg",
     type: "illustration",
     scene: 1,
     slot: 2
   },
   {
     id: "JAE-0003",
-    username: "Night Traveler",
-    message:
-      "A little memory from this summer, left here to celebrate your night.",
-    image: "images/sample-photo-2.jpg",
+    username: "Geumdong1",
+    handle: "",
+    handleUrl: "",
+    message: "",
+    image: "images/sample_2.jpg",
     type: "photo",
     scene: 2,
     slot: 1
@@ -61,7 +67,9 @@ const cardImage = document.querySelector("#cardImage");
 const cardImageButton = document.querySelector("#cardImageButton");
 const cardImageHint = document.querySelector("#cardImageHint");
 const cardMessage = document.querySelector("#cardMessage");
+const cardLink = document.querySelector("#cardLink");
 const cardUsername = document.querySelector("#cardUsername");
+const cardHandle = document.querySelector("#cardHandle");
 
 const imageLightbox = document.querySelector("#imageLightbox");
 const lightboxImage = document.querySelector("#lightboxImage");
@@ -169,9 +177,36 @@ function openLantern(post, button) {
   button.setAttribute("aria-expanded", "true");
   lastFocusedLantern = button;
 
-  cardMessage.textContent = post.message;
+  if (post.message) {
+    cardMessage.textContent = post.message;
+    cardMessage.hidden = false;
+  } else {
+    cardMessage.textContent = "";
+    cardMessage.hidden = true;
+  }
+
+  if (post.link) {
+    cardLink.href = post.link;
+    cardLink.textContent = post.linkLabel || post.link;
+    cardLink.hidden = false;
+  } else {
+    cardLink.href = "";
+    cardLink.textContent = "";
+    cardLink.hidden = true;
+  }
+
   cardUsername.textContent =
-    post.username === "Anonymous" ? "— Anonymous" : `— ${post.username}`;
+    post.username === "Anonymous" ? "Anonymous" : post.username;
+
+  if (post.handle) {
+    cardHandle.textContent = post.handle;
+    cardHandle.href = post.handleUrl || `https://x.com/${post.handle.replace(/^@/, "")}`;
+    cardHandle.hidden = false;
+  } else {
+    cardHandle.textContent = "";
+    cardHandle.href = "";
+    cardHandle.hidden = true;
+  }
 
   if (post.image) {
     cardImage.src = post.image;
