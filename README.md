@@ -180,3 +180,10 @@ The rising particle now ends at the same Y coordinate as the dynamic particle th
 - Replaced publication sample content and images.
 - Added optional post `link` / `linkLabel` support.
 - Empty messages are hidden cleanly.
+
+
+## Version 14.1 hotfix
+- Fixed the message-card close button so it is truly positioned at the upper-right.
+  A later CSS rule in V12 had accidentally changed `.modal__close` from `position:absolute` to `position:relative`.
+- Restored the em dash before the display name, e.g. `— Hana`.
+- Fixed Sample 1's intended line break so `\n` is rendered as an actual new line rather than visible text.

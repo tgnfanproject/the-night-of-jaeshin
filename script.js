@@ -13,7 +13,7 @@ const lanternPosts = [
     handle: "@logofhana",
     handleUrl: "https://x.com/logofhana",
     message:
-      "Happy birthday, Jaeshin!\\n何百年、何千年を歩むあなたの人生が、この先も祝福で満ちていますように",
+      "Happy birthday, Jaeshin!\n何百年、何千年を歩むあなたの人生が、この先も祝福で満ちていますように",
     image: "",
     type: "message",
     scene: 1,
@@ -196,7 +196,7 @@ function openLantern(post, button) {
   }
 
   cardUsername.textContent =
-    post.username === "Anonymous" ? "Anonymous" : post.username;
+    post.username === "Anonymous" ? "— Anonymous" : `— ${post.username}`;
 
   if (post.handle) {
     cardHandle.textContent = post.handle;
