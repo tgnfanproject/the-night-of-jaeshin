@@ -38,7 +38,7 @@
       <p class="eyebrow">A night made brighter together</p>
       <h2>See Everyone’s Lanterns</h2>
       <p>
-        Tap a lantern to read the messages and see the gifts left for Jaeshin.
+        Tap a lantern to read the messages and see the gifts left for Jaeshin. The glow hints at what is waiting inside.
       </p>
     </section>
 
@@ -98,13 +98,31 @@
     <button class="modal__backdrop" type="button" data-close-modal aria-label="Close"></button>
     <article class="hanji-card">
       <button class="modal__close" type="button" data-close-modal aria-label="Close message">×</button>
-      <div class="hanji-card__seal" aria-hidden="true">燈</div>
-      <img class="hanji-card__image" id="cardImage" src="" alt="" hidden>
+      <div class="hanji-card__seal" aria-hidden="true">축<br>하</div>
+      <button class="hanji-card__image-button" id="cardImageButton" type="button" hidden aria-label="Enlarge image">
+        <img class="hanji-card__image" id="cardImage" src="" alt="">
+      </button>
+      <p class="hanji-card__image-hint" id="cardImageHint" hidden>Tap image to enlarge</p>
       <div class="hanji-card__body">
         <p class="hanji-card__message" id="cardMessage"></p>
         <p class="hanji-card__username" id="cardUsername"></p>
       </div>
     </article>
+  </div>
+
+
+  <div class="image-lightbox" id="imageLightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxCredit" hidden>
+    <button class="image-lightbox__backdrop" type="button" data-close-lightbox aria-label="Close image"></button>
+    <div class="image-lightbox__panel">
+      <button class="image-lightbox__close" type="button" data-close-lightbox aria-label="Close image">×</button>
+      <img class="image-lightbox__image" id="lightboxImage" src="" alt="">
+      <p class="image-lightbox__credit" id="lightboxCredit"></p>
+      <p class="image-lightbox__rights">
+        Artwork and images remain the property of their respective creators. Please do not repost,
+        redistribute, or use them for AI training without permission.<br>
+        イラスト・画像の権利は各制作者・権利者に帰属します。許可のない転載・再配布・AI学習への利用はご遠慮ください。
+      </p>
+    </div>
   </div>
 
   <aside class="light-panel" aria-live="polite">

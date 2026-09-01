@@ -123,3 +123,13 @@ The old darkening filter was removed. The already-processed night images now rec
 
 ### Add a Light arrival
 The rising particle now ends at the same Y coordinate as the dynamic particle that appears after it, as well as using the same X coordinate.
+
+
+## Version 12
+- Finalized slotMap and brightness(.80).
+- Three publication sample lanterns only.
+- Added post types and subtle glow colors for message / illustration / photo.
+- Card images display without paper texture and can be enlarged in a full-screen lightbox.
+- Added creator-rights / reposting / AI-training notice.
+- Changed card seal to `축하`.
+- Fixed mobile static-particle vertical jumping caused by browser chrome resize events.

@@ -9,239 +9,34 @@ const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_-MGW3oqEcuhOVLN1imw2cg_5KurcuBL
 const lanternPosts = [
   {
     id: "JAE-0001",
-    username: "Hanon",
+    username: "Hana",
     message:
-      "Happy birthday, Jaeshin.\nMay this night be filled with all the warmth you learned to treasure.",
-    image: "images/Jae-001.jpeg",
+      "Happy birthday, Jaeshin.
+May this night be filled with all the warmth you learned to treasure.",
+    image: "",
+    type: "message",
     scene: 1,
     slot: 1
   },
   {
     id: "JAE-0002",
-    username: "Anonymous",
+    username: "Moonlit Reader",
     message:
-      "Thank you for showing us that even the lord of the night can learn a gentler kind of light.",
-    image: "",
+      "Happy birthday! I hope Nok stays by your side through every night still to come.",
+    image: "images/sample-photo-1.jpg",
+    type: "illustration",
     scene: 1,
     slot: 2
   },
   {
     id: "JAE-0003",
-    username: "Moonlit Reader",
-    message:
-      "Happy birthday! I hope Nok stays by your side through every night still to come.",
-    image: "images/sample-photo-1.jpg",
-    scene: 1,
-    slot: 3
-  },
-  {
-    id: "JAE-0004",
-    username: "Lantern Keeper",
-    message:
-      "A small light for the one who found love in the human world.",
-    image: "",
-    scene: 1,
-    slot: 4
-  },
-  {
-    id: "JAE-0005",
-    username: "Anonymous",
-    message:
-      "To Jaeshin — may you always find your way back to warmth.",
-    image: "images/sample-photo-2.jpg",
-    scene: 1,
-    slot: 5
-  },
-  {
-    id: "JAE-0006",
     username: "Night Traveler",
     message:
-      "Happy birthday to the ruler of the night, and to the man who learned how bright love could be.",
-    image: "",
-    scene: 1,
-    slot: 6
-  },
-  {
-    id: "JAE-0007",
-    username: "A Fan From Afar",
-    message:
-      "Sending one more lantern into your night. Happy birthday, Jaeshin.",
-    image: "",
-    scene: 1,
-    slot: 7
-  },
-  {
-    id: "JAE-0008",
-    username: "Anonymous",
-    message:
-      "May the night be kind to you this year.",
-    image: "",
-    scene: 1,
-    slot: 8
-  },
-  {
-    id: "JAE-0009",
-    username: "Anonymous",
-    message:
-      "May the night be kind to you this year.",
-    image: "",
-    scene: 1,
-    slot: 9
-  },
-  {
-    id: "JAE-0010",
-    username: "Anonymous",
-    message:
-      "May the night be kind to you this year.",
-    image: "",
-    scene: 1,
-    slot: 10
-  },
-
-  {
-    id: "JAE-0011",
-    username: "Hana",
-    message:
-      "Happy birthday, Jaeshin.\nMay this night be filled with all the warmth you learned to treasure.",
-    image: "",
+      "A little memory from this summer, left here to celebrate your night.",
+    image: "images/sample-photo-2.jpg",
+    type: "photo",
     scene: 2,
     slot: 1
-  },
-  {
-    id: "JAE-0012",
-    username: "Anonymous",
-    message:
-      "Thank you for showing us that even the lord of the night can learn a gentler kind of light.",
-    image: "",
-    scene: 2,
-    slot: 2
-  },
-  {
-    id: "JAE-0013",
-    username: "Moonlit Reader",
-    message:
-      "Happy birthday! I hope Nok stays by your side through every night still to come.",
-    image: "images/sample-photo-1.jpg",
-    scene: 2,
-    slot: 3
-  },
-  {
-    id: "JAE-0014",
-    username: "Lantern Keeper",
-    message:
-      "A small light for the one who found love in the human world.",
-    image: "",
-    scene: 2,
-    slot: 4
-  },
-  {
-    id: "JAE-0015",
-    username: "Anonymous",
-    message:
-      "To Jaeshin — may you always find your way back to warmth.",
-    image: "images/sample-photo-2.jpg",
-    scene: 2,
-    slot: 5
-  },
-  {
-    id: "JAE-0016",
-    username: "Night Traveler",
-    message:
-      "Happy birthday to the ruler of the night, and to the man who learned how bright love could be.",
-    image: "",
-    scene: 2,
-    slot: 6
-  },
-  {
-    id: "JAE-0017",
-    username: "A Fan From Afar",
-    message:
-      "Sending one more lantern into your night. Happy birthday, Jaeshin.",
-    image: "",
-    scene: 2,
-    slot: 7
-  },
-  {
-    id: "JAE-0018",
-    username: "Anonymous",
-    message:
-      "May the night be kind to you this year.",
-    image: "",
-    scene: 2,
-    slot: 8
-  },
-  {
-    id: "JAE-0019",
-    username: "Anonymous",
-    message:
-      "May the night be kind to you this year.",
-    image: "",
-    scene: 2,
-    slot: 9
-  },
-  {
-    id: "JAE-0020",
-    username: "Anonymous",
-    message:
-      "May the night be kind to you this year.",
-    image: "",
-    scene: 2,
-    slot: 10
-  },
-
-  {
-    id: "JAE-0021",
-    username: "Hana",
-    message:
-      "Happy birthday, Jaeshin.\nMay this night be filled with all the warmth you learned to treasure.",
-    image: "",
-    scene: 3,
-    slot: 1
-  },
-  {
-    id: "JAE-0022",
-    username: "Anonymous",
-    message:
-      "Thank you for showing us that even the lord of the night can learn a gentler kind of light.",
-    image: "",
-    scene: 3,
-    slot: 2
-  },
-  {
-    id: "JAE-0023",
-    username: "Moonlit Reader",
-    message:
-      "Happy birthday! I hope Nok stays by your side through every night still to come.",
-    image: "images/sample-photo-1.jpg",
-    scene: 3,
-    slot: 3
-  },
-  {
-    id: "JAE-0024",
-    username: "Lantern Keeper",
-    message:
-      "A small light for the one who found love in the human world.",
-    image: "",
-    scene: 3,
-    slot: 4
-  },
-  {
-    id: "JAE-0025",
-    username: "Anonymous",
-    message:
-      "To Jaeshin — may you always find your way back to warmth.",
-    image: "images/sample-photo-2.jpg",
-    scene: 3,
-    slot: 5
-  },
-  {
-    id: "JAE-0026",
-    username: "Night Traveler",
-    message:
-      "Happy birthday to the ruler of the night, and to the man who learned how bright love could be.",
-    image: "",
-    scene: 3,
-    slot: 6
   }
 ];
 
@@ -253,7 +48,7 @@ const slotMap = {
   ],
   2: [
     { x: 50, y: 35, scale: 0.6 }, { x: 63, y: 34, scale: 0.6 }, { x: 75, y: 33, scale: 0.6 }, { x: 87, y: 32, scale: 0.6 },
-    { x: 8, y: 60, scale: 0.8, ground: true }, { x: 24, y: 61, scale: 0.8, ground: true }, { x: 40, y: 61, scale: 0.8, ground: true }, 
+    { x: 8, y: 60, scale: 0.8, ground: true }, { x: 24, y: 61, scale: 0.8, ground: true }, { x: 40, y: 61, scale: 0.8, ground: true },
     { x: 56, y: 62, scale: 0.8, ground: true }, { x: 73, y: 62, scale: 0.8, ground: true }, { x: 90, y: 63, scale: 0.8, ground: true }
   ],
   3: [
@@ -264,8 +59,14 @@ const slotMap = {
 
 const lanternModal = document.querySelector("#lanternModal");
 const cardImage = document.querySelector("#cardImage");
+const cardImageButton = document.querySelector("#cardImageButton");
+const cardImageHint = document.querySelector("#cardImageHint");
 const cardMessage = document.querySelector("#cardMessage");
 const cardUsername = document.querySelector("#cardUsername");
+
+const imageLightbox = document.querySelector("#imageLightbox");
+const lightboxImage = document.querySelector("#lightboxImage");
+const lightboxCredit = document.querySelector("#lightboxCredit");
 
 const submitModal = document.querySelector("#submitModal");
 const submitButtons = [
@@ -313,8 +114,13 @@ function createLanternButton(post, coordinates) {
   const shouldSway = isGround ? false : coordinates.sway !== false;
   const showCord = isGround ? false : coordinates.cord !== false;
 
+  const lanternType = ["message", "illustration", "photo"].includes(post.type)
+    ? post.type
+    : (post.image ? "photo" : "message");
+
   const lanternClasses = [
     "lantern",
+    `lantern--${lanternType}`,
     shouldSway ? "" : "lantern--static",
     showCord ? "" : "lantern--no-cord"
   ].filter(Boolean).join(" ");
@@ -371,16 +177,43 @@ function openLantern(post, button) {
   if (post.image) {
     cardImage.src = post.image;
     cardImage.alt = `Artwork or photo shared by ${post.username}`;
-    cardImage.hidden = false;
+    cardImageButton.hidden = false;
+    cardImageHint.hidden = false;
+    cardImageButton.dataset.username = post.username;
   } else {
     cardImage.src = "";
     cardImage.alt = "";
-    cardImage.hidden = true;
+    cardImageButton.hidden = true;
+    cardImageHint.hidden = true;
+    cardImageButton.dataset.username = "";
   }
 
   lanternModal.hidden = false;
   document.body.style.overflow = "hidden";
   lanternModal.querySelector(".modal__close")?.focus();
+}
+
+function openImageLightbox() {
+  if (!cardImage.src || cardImageButton.hidden) return;
+
+  const username = cardImageButton.dataset.username || "Anonymous";
+  lightboxImage.src = cardImage.src;
+  lightboxImage.alt = cardImage.alt;
+  lightboxCredit.textContent =
+    username === "Anonymous" ? "Shared by Anonymous" : `Shared by ${username}`;
+
+  imageLightbox.hidden = false;
+  document.body.style.overflow = "hidden";
+  imageLightbox.querySelector(".image-lightbox__close")?.focus();
+}
+
+function closeImageLightbox() {
+  if (imageLightbox.hidden) return;
+  imageLightbox.hidden = true;
+  lightboxImage.src = "";
+  lightboxImage.alt = "";
+  document.body.style.overflow = "hidden";
+  cardImageButton?.focus();
 }
 
 function closeLantern() {
@@ -655,6 +488,14 @@ document.querySelectorAll("[data-close-modal]").forEach((button) => {
   button.addEventListener("click", closeLantern);
 });
 
+if (cardImageButton) {
+  cardImageButton.addEventListener("click", openImageLightbox);
+}
+
+document.querySelectorAll("[data-close-lightbox]").forEach((button) => {
+  button.addEventListener("click", closeImageLightbox);
+});
+
 document.querySelectorAll("[data-close-submit]").forEach((button) => {
   button.addEventListener("click", closeSubmitPreview);
 });
@@ -669,13 +510,32 @@ if (sendLightButton) {
   sendLightButton.addEventListener("click", sendLight);
 }
 
+let lastStaticCanvasWidth = window.innerWidth;
+
 window.addEventListener("resize", () => {
+  const widthDifference = Math.abs(window.innerWidth - lastStaticCanvasWidth);
+
+  // Mobile browser bars often change only viewport height while scrolling.
+  if (widthDifference < 40) return;
+
+  lastStaticCanvasWidth = window.innerWidth;
   drawStaticLights();
+});
+
+window.addEventListener("orientationchange", () => {
+  window.setTimeout(() => {
+    lastStaticCanvasWidth = window.innerWidth;
+    drawStaticLights();
+  }, 200);
 });
 
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
 
+  if (imageLightbox && !imageLightbox.hidden) {
+    closeImageLightbox();
+    return;
+  }
   if (lanternModal && !lanternModal.hidden) closeLantern();
   if (submitModal && !submitModal.hidden) closeSubmitPreview();
 });
