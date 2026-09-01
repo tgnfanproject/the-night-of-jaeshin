@@ -133,3 +133,12 @@ The rising particle now ends at the same Y coordinate as the dynamic particle th
 - Added creator-rights / reposting / AI-training notice.
 - Changed card seal to `축하`.
 - Fixed mobile static-particle vertical jumping caused by browser chrome resize events.
+
+
+## Version 12.1 hotfix
+- Fixed a JavaScript syntax error in the first sample message.
+- The error prevented all JavaScript from running, which is why:
+  - sample lanterns disappeared,
+  - Add a Light stopped responding,
+  - the Supabase counter stayed visually at 0.
+- No Supabase data was reset; the shared counter should load normally again after this fix.

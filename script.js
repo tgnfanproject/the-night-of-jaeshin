@@ -11,8 +11,7 @@ const lanternPosts = [
     id: "JAE-0001",
     username: "Hana",
     message:
-      "Happy birthday, Jaeshin.
-May this night be filled with all the warmth you learned to treasure.",
+      "Happy birthday, Jaeshin.\nMay this night be filled with all the warmth you learned to treasure.",
     image: "",
     type: "message",
     scene: 1,
