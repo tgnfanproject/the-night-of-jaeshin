@@ -9,10 +9,10 @@ const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_-MGW3oqEcuhOVLN1imw2cg_5KurcuBL
 const lanternPosts = [
   {
     id: "JAE-0001",
-    username: "Hana",
+    username: "Hanon",
     message:
       "Happy birthday, Jaeshin.\nMay this night be filled with all the warmth you learned to treasure.",
-    image: "",
+    image: "images/Jae-001.jpeg",
     scene: 1,
     slot: 1
   },
