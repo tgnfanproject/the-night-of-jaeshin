@@ -66,6 +66,18 @@ const lanternPosts = [
     scene: 1,
     slot: 6
   },
+  {
+    id: "JAE-0006",
+    username: "AnonymousGeumdong1",
+    handle: "",
+    handleUrl: "",
+    message:
+      "재신아 생일 축하해!!! 행복하게 녹이랑 알콩달콩 평생 함께 사랑하자",
+    image: "",
+    type: "message",
+    scene: 2,
+    slot: 2
+  },
 ];
 
 const slotMap = {
