@@ -57,7 +57,7 @@ const lanternPosts = [
   {
     id: "JAE-0005",
     username: "_valartes_",
-    handle: "@logofhana",
+    handle: "@ValArtes_",
     handleUrl: "https://x.com/ValArtes_",
     message:
       "HBD JaeShin❤️!!!",
