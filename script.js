@@ -42,7 +42,30 @@ const lanternPosts = [
     type: "photo",
     scene: 2,
     slot: 1
-  }
+  },
+  {
+    id: "JAE-0004",
+    username: "EE❤️💚",
+    handle: "@eeminnim",
+    handleUrl: "https://x.com/eeminnim",
+    message: "내가 가장 사랑하는 재신❤️ 생일 축하해❤️\n매년 9월이 오는 걸 정말 기대하고 있어.\n彼岸花가 피기를 기다리는 이유는 네 생일이 다가오기 때문이야.\n기다리는 동안에도 왠지 너에게 조금 더 가까워지는 기분이 들어🥰\n네가 언제나 행복하기를 바랄게. ❤️",
+    image: "images/sample_2.jpg",
+    type: "photo",
+    scene: 1,
+    slot: 5
+  },
+  {
+    id: "JAE-0005",
+    username: "_valartes_",
+    handle: "@logofhana",
+    handleUrl: "https://x.com/ValArtes_",
+    message:
+      "HBD JaeShin❤️!!!",
+    image: "",
+    type: "message",
+    scene: 1,
+    slot: 6
+  },
 ];
 
 const slotMap = {
