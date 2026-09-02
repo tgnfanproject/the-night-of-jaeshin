@@ -78,6 +78,18 @@ const lanternPosts = [
     scene: 2,
     slot: 2
   },
+  {
+    id: "JAE-0007",
+    username: "冬不眠島DonMian",
+    handle: "@Zyiikasuye",
+    handleUrl: "https://x.com/Zyiikasuye",
+    message:
+      "재신아, 영원히 행복하길 바라🥹",
+    image: "images/Jae-007.jpeg",
+    type: "illustration",
+    scene: 2,
+    slot: 3
+  }
 ];
 
 const slotMap = {
