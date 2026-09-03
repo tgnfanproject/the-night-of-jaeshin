@@ -124,6 +124,17 @@ const lanternPosts = [
     scene: 2,
     slot: 4
   },
+  {
+    id: "JAE-0011",
+    username: "AnonymousGeumdong2",
+    handle: "",
+    handleUrl: "",
+    message: "Jaenok💚❤️",
+    image: "",
+    type: "message",
+    scene: 2,
+    slot: 5
+  },
 ];
 
 const slotMap = {
