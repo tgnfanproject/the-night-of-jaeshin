@@ -135,6 +135,40 @@ const lanternPosts = [
     scene: 2,
     slot: 5
   },
+  {
+    id: "JAE-0012",
+    username: "AnonymousGeumdong3",
+    handle: "",
+    handleUrl: "",
+    message: "Happy Birthday❤️",
+    image: "",
+    type: "message",
+    scene: 2,
+    slot: 7
+  },
+  {
+    id: "JAE-0013",
+    username: "冬不眠島DonMian",
+    handle: "@Zyiikasuye",
+    handleUrl: "https://x.com/Zyiikasuye",
+    message:
+      "Happy Birthday～❤️💚",
+    image: "images/Jae-013.jpeg",
+    type: "illustration",
+    scene: 3,
+    slot: 3
+  },
+  {
+    id: "JAE-0014",
+    username: "Leng",
+    handle: "@Lengovo_0220",
+    handleUrl: "https://x.com/Leng_ovo0220",
+    message: "Happy birthday! I miss you and LeeNok very much.💚❤️",
+    image: "images/Jae-014.png",
+    type: "illustration",
+    scene: 2,
+    slot: 6
+  },
 ];
 
 const slotMap = {
