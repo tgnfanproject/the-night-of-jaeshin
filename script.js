@@ -89,7 +89,41 @@ const lanternPosts = [
     type: "illustration",
     scene: 2,
     slot: 3
-  }
+  },
+  {
+    id: "JAE-0008",
+    username: "Leng",
+    handle: "@Lengovo_0220",
+    handleUrl: "https://x.com/Leng_ovo0220",
+    message: "Happy birthday to JaeShin! Be happy with LeeNok all the time.",
+    image: "images/Jae-008.png",
+    type: "illustration",
+    scene: 3,
+    slot: 2
+  },
+  {
+    id: "JAE-0009",
+    username: "Sasa",
+    handle: "@SaSa__lovely_",
+    handleUrl: "https://x.com/SaSa__lovely_",
+    message:
+      "재신아 생일 축하해!!! 행복하게 녹이랑 알콩달콩 평생 함께 사랑하자",
+    image: "",
+    type: "message",
+    scene: 3,
+    slot: 1
+  },
+  {
+    id: "JAE-0010",
+    username: "Joy",
+    handle: "@runitdownfast",
+    handleUrl: "https://x.com/runitdownfast",
+    message: "❤️💚",
+    image: "images/Jae-010.jpg",
+    type: "photo",
+    scene: 2,
+    slot: 4
+  },
 ];
 
 const slotMap = {
