@@ -169,6 +169,39 @@ const lanternPosts = [
     scene: 2,
     slot: 6
   },
+  {
+    id: "JAE-0015",
+    username: "Jaenok  forever",
+    handle: "Kyo_Shin",
+    handleUrl: "",
+    message: "Happy birthday to the most perfect princes. The most beautiful and incredible manhwaboys the world has ever known. He will have so much change alongside Nok. I love him with all my heart. Happy Jaeshin Day 💚❤️",
+    image: "images/Jae-015.jpg",
+    type: "photo",
+    scene: 1,
+    slot: 9
+  },
+  {
+    id: "JAE-0016",
+    username: "Jaenok  forever",
+    handle: "Kyo_Shin",
+    handleUrl: "",
+    message: "Happy birthday to the most perfect princes. The most beautiful and incredible manhwaboys the world has ever known. He will have so much change alongside Nok. I love him with all my heart. Happy Jaeshin Day 💚❤️",
+    image: "images/Jae-016.jpg",
+    type: "photo",
+    scene: 2,
+    slot: 8
+  },
+  {
+    id: "JAE-0017",
+    username: "Jaenok  forever",
+    handle: "Kyo_Shin",
+    handleUrl: "",
+    message: "Happy birthday to the most perfect princes. The most beautiful and incredible manhwaboys the world has ever known. He will have so much change alongside Nok. I love him with all my heart. Happy Jaeshin Day 💚❤️",
+    image: "images/Jae-017.jpg",
+    type: "photo",
+    scene: 3,
+    slot: 6
+  },
 ];
 
 const slotMap = {
