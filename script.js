@@ -202,6 +202,39 @@ const lanternPosts = [
     scene: 3,
     slot: 6
   },
+  {
+    id: "JAE-0018",
+    username: "frani",
+    handle: "@strawberryNok",
+    handleUrl: "https://x.com/strawberryNok",
+    message: "Happy birthday our dearest Jaeshin. \n I miss you, but I know we will see you (and Nok) very soon ❤️💚",
+    image: "images/Jae-018.jpeg",
+    type: "photo",
+    scene: 1,
+    slot: 7
+  },
+  {
+    id: "JAE-0019",
+    username: "EE❤️💚",
+    handle: "@eeminnim",
+    handleUrl: "https://x.com/eeminnim",
+    message: "붉은 꽃불 속에서 서로를 품고, 영원히 사랑하자❤️💚",
+    image: "images/Jae-019.jpeg",
+    type: "photo",
+    scene: 2,
+    slot: 9
+  },
+  {
+    id: "JAE-0020",
+    username: "悠月",
+    handle: "@yu0_0tuki",
+    handleUrl: "https://x.com/yu0_0tuki",
+    message: "ジェシン、誕生日おめでとう！！\nクムドンの姿のだった時のあなたは夜が来るのがきっと待ち遠しかったはず\nノクを思う存分抱きしめ、心を満たすことのできる夜が永遠に続けばいいと思ったことでしょう\n今宵も愛しい人と素敵な夜を過ごしてくださいね",
+    image: "images/Jae-020.jpg",
+    type: "photo",
+    scene: 1,
+    slot: 3
+  },
 ];
 
 const slotMap = {
