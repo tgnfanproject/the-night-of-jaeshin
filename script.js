@@ -478,17 +478,19 @@ function seededRandom(seed) {
 
 function getStaticLightCount(total) {
   if (total <= 0) return 0;
-  if (total <= 50) return 5;
-  if (total <= 100) return 10;
-  if (total <= 200) return 20;
-  if (total <= 400) return 30;
-  if (total <= 700) return 40;
-  if (total <= 1000) return 50;
-  if (total <= 1500) return 60;
-  if (total <= 2500) return 70;
-  if (total <= 4000) return 80;
-  if (total <= 7000) return 90;
-  return 100;
+  if (total <= 50) return 10;
+  if (total <= 100) return 20;
+  if (total <= 200) return 35;
+  if (total <= 400) return 55;
+  if (total <= 600) return 85;
+  if (total <= 700) return 100;
+  if (total <= 850) return 115;
+  if (total <= 1000) return 140;
+  if (total <= 1500) return 160;
+  if (total <= 2500) return 180;
+  if (total <= 4000) return 200;
+  if (total <= 7000) return 220;
+  return 240;
 }
 
 function drawStaticLights() {
