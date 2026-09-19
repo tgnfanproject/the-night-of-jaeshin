@@ -530,10 +530,12 @@ function getStaticLightCount(total) {
   if (total <= 700) return 100;
   if (total <= 850) return 115;
   if (total <= 1000) return 140;
-  if (total <= 1500) return 160;
-  if (total <= 2500) return 180;
-  if (total <= 4000) return 200;
-  if (total <= 7000) return 220;
+  if (total <= 1200) return 200;
+  if (total <= 1300) return 250;
+  if (total <= 1500) return 300;
+  if (total <= 2500) return 300;
+  if (total <= 4000) return 300;
+  if (total <= 7000) return 300;
   return 240;
 }
 
