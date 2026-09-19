@@ -279,6 +279,39 @@ const lanternPosts = [
     scene: 1,
     slot: 8
   },
+  {
+    id: "JAE-0025",
+    username: "Averdi",
+    handle: "@averdiren",
+    handleUrl: "https://x.com/Averdiren",
+    message: "ʜᴀᴘᴘʏ ʙɪʀᴛʜᴅᴀʏ, ᴊᴀᴇꜱʜɪɴ\nI wish the authors health and creative success ^•^",
+    image: "images/Jae-025.jpg",
+    type: "photo",
+    scene: 1,
+    slot: 10
+  },
+  {
+    id: "JAE-0026",
+    username: "KIYOMI",
+    handle: "@KIYOMI125",
+    handleUrl: "https://x.com/KIYOMI125",
+    message: "ジェシン❤️\n誕生日おめでとうございます🪭",
+    image: "images/Jae-026.jpeg",
+    type: "photo",
+    scene: 2,
+    slot: 10
+  },
+  {
+    id: "JAE-0027",
+    username: "SUZU",
+    handle: "@bearrabbit334",
+    handleUrl: "https://x.com/bearrabbit334",
+    message: "	09.17\n오늘 대만에서 진행된 재신 생일 응원 광고를 보러 다녀왔어요❤️\n대만에서 함께 참여할 수 있어서 정말 너무 행복해요!!!!\n올해도 계속 재신의 생일을 함께 축하할 수 있어서 너무 기뻐요🐾\n귀야곡의 귀환을 기다리고 있을게요❤️💚🐾",
+    image: "images/Jae-027.jpeg",
+    type: "photo",
+    scene: 3,
+    slot: 5
+  },
 ];
 
 const slotMap = {
