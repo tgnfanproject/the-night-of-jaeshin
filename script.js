@@ -235,6 +235,50 @@ const lanternPosts = [
     scene: 1,
     slot: 3
   },
+  {
+    id: "JAE-0021",
+    username: "AnonymousGeumdong3",
+    handle: "",
+    handleUrl: "",
+    message: "Happy birthday, Jaeshin!💚❤️🐾",
+    image: "images/Jae-021.jpg",
+    type: "photo",
+    scene: 1,
+    slot: 3
+  },
+  {
+    id: "JAE-0022",
+    username: "冬不眠島DonMian",
+    handle: "@Zyiikasuye",
+    handleUrl: "https://x.com/Zyiikasuye",
+    message: "재신, 생일 축하해! 🥹 이녹과 오래오래 행복하게 지내길 바라. 너희가 정말 너무 보고 싶어. 다시 만날 날을 기대하고 있을게! 🥹",
+    image: "images/Jae-022.jpeg",
+    type: "illustration",
+    scene: 1,
+    slot: 4
+  },
+  {
+    id: "JAE-0023",
+    username: "HiddenTrack11_",
+    handle: "@DiaryWedne87668",
+    handleUrl: "https://x.com/DiaryWedne87668?",
+    message: "Jaeshin comes from the deep night. Like midnight, he is mysterious and captivating, yet his heart holds the purity of a young soul.He risked everything to save Nok. While learning how to love, he had already understood what true love really is.Happy birthday!and may joy be with you every day!🎉\nThank you, dear Jade nim and ananas nim. I love you so much. I will always dwell in this beautiful world you have built. May you always be healthy and happy.❤️💚🐾",
+    image: "images/Jae-023.jpeg",
+    type: "illustration",
+    scene: 3,
+    slot: 4
+  },
+  {
+    id: "JAE-0024",
+    username: "ハクク",
+    handle: "@hakuku2404",
+    handleUrl: "https://x.com/hakuku2404?s=20",
+    message: "ジェシンお誕生日おめでとう〜❤️\nシーズン4の復帰，待ってますよ🥰",
+    image: "",
+    type: "message",
+    scene: 1,
+    slot: 8
+  },
 ];
 
 const slotMap = {
