@@ -415,6 +415,50 @@ const lanternPosts = [
     scene: 4,
     slot: 2
   },
+  {
+    id: "JAE-0037",
+    username: "bbo",
+    handle: "@bbxxoing",
+    handleUrl: "https://x.com/bbxxoing",
+    message: "HBD JAESHIN♡",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 11
+  },
+  {
+    id: "JAE-0038",
+    username: "ttalgi",
+    handle: "@ttalgi_here",
+    handleUrl: "https://x.com/ttalgi_here",
+    message: "宰信生日快樂🎂❤️💚\n要跟李璐一起幸福啊🥺❤️💚",
+    image: "images/Jae-038.png",
+    type: "photo",
+    scene: 4,
+    slot: 12
+  },
+  {
+    id: "JAE-0039",
+    username: "ttalgi",
+    handle: "@ttalgi_here",
+    handleUrl: "https://x.com/ttalgi_here",
+    message: "Happy Birthday Jaeshin❤️💚",
+    image: "images/Jae-039.png",
+    type: "photo",
+    scene: 2,
+    slot: 11
+  },
+  {
+    id: "JAE-0040",
+    username: "りん",
+    handle: "@rin_i2d",
+    handleUrl: "https://x.com/rin_i2d",
+    message: "Jaeshin HappyBirthday！！\n \n今年もお誕生日をお祝い出来て嬉しいです。\n \n先生素敵な作品をありがとうございます。\n \n ohyoii",
+    image: "images/Jae-040.jpeg",
+    type: "photo",
+    scene: 2,
+    slot: 12
+  },
 ];
 
 const slotMap = {
@@ -426,7 +470,8 @@ const slotMap = {
   2: [
     { x: 50, y: 35, scale: 0.6 }, { x: 63, y: 34, scale: 0.6 }, { x: 75, y: 33, scale: 0.6 }, { x: 87, y: 32, scale: 0.6 },
     { x: 8, y: 60, scale: 0.8, ground: true }, { x: 24, y: 61, scale: 0.8, ground: true }, { x: 40, y: 61, scale: 0.8, ground: true },
-    { x: 56, y: 62, scale: 0.8, ground: true }, { x: 73, y: 62, scale: 0.8, ground: true }, { x: 90, y: 63, scale: 0.8, ground: true }
+    { x: 56, y: 62, scale: 0.8, ground: true }, { x: 73, y: 62, scale: 0.8, ground: true }, { x: 90, y: 63, scale: 0.8, ground: true },
+    { x: 71, y: 83, scale: 0.8, ground: true }, { x: 83, y: 75, scale: 0.8, ground: true }
   ],
   3: [
     { x: 7, y: 38 }, { x: 21, y: 34 }, { x: 38, y: 30 },
@@ -435,7 +480,7 @@ const slotMap = {
   4: [
     { x: 10, y: 44, scale: 0.9 }, { x: 30, y: 44, scale: 0.9 }, { x: 50, y: 44, scale: 0.9 }, { x: 70, y: 44, scale: 0.9 },
     { x: 35, y: 55, scale: 0.7 }, { x: 48, y: 52, scale: 0.7 }, { x: 61, y: 48, scale: 0.7 },
-    { x: 54, y: 75, scale: 0.6 }, { x: 66, y: 75, scale: 0.6 }, { x: 78, y: 75, scale: 0.6 }, { x: 90, y: 75, scale: 0.6 }
+    { x: 54, y: 75, scale: 0.6 }, { x: 66, y: 75, scale: 0.6 }, { x: 78, y: 75, scale: 0.6 }, { x: 90, y: 75, scale: 0.6 }, { x: 44, y: 75, scale: 0.6 }
   ]
 };
 
