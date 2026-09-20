@@ -471,7 +471,7 @@ const slotMap = {
     { x: 50, y: 35, scale: 0.6 }, { x: 63, y: 34, scale: 0.6 }, { x: 75, y: 33, scale: 0.6 }, { x: 87, y: 32, scale: 0.6 },
     { x: 8, y: 60, scale: 0.8, ground: true }, { x: 24, y: 61, scale: 0.8, ground: true }, { x: 40, y: 61, scale: 0.8, ground: true },
     { x: 56, y: 62, scale: 0.8, ground: true }, { x: 73, y: 62, scale: 0.8, ground: true }, { x: 90, y: 63, scale: 0.8, ground: true },
-    { x: 71, y: 83, scale: 0.8, ground: true }, { x: 83, y: 75, scale: 0.8, ground: true }
+    { x: 71, y: 83, scale: 0.8, ground: true }, { x: 83, y: 80, scale: 0.8, ground: true }
   ],
   3: [
     { x: 7, y: 38 }, { x: 21, y: 34 }, { x: 38, y: 30 },
