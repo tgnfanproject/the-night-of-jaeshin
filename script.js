@@ -29,8 +29,8 @@ const lanternPosts = [
     linkLabel: "Read The Ghost’s Nocturne →",
     image: "images/sample_1.jpeg",
     type: "illustration",
-    scene: 1,
-    slot: 2
+    scene: 4,
+    slot: 10
   },
   {
     id: "JAE-0003",
@@ -237,14 +237,14 @@ const lanternPosts = [
   },
   {
     id: "JAE-0021",
-    username: "AnonymousGeumdong3",
+    username: "AnonymousGeumdong4",
     handle: "",
     handleUrl: "",
     message: "Happy birthday, Jaeshin!💚❤️🐾",
     image: "images/Jae-021.jpg",
     type: "photo",
     scene: 1,
-    slot: 3
+    slot: 2
   },
   {
     id: "JAE-0022",
@@ -312,6 +312,109 @@ const lanternPosts = [
     scene: 3,
     slot: 5
   },
+  {
+    id: "JAE-0028",
+    username: "AnonymousGeumdong5",
+    handle: "",
+    handleUrl: "",
+    message: "祝地府最最最帥的時尚男模宰信生日快樂！！！\nHappy birthday to Jaeshin!!\nLove from Yana, Taiwan",
+    image: "images/Jae-028.jpg",
+    type: "photo",
+    scene: 4,
+    slot: 1
+  },
+  {
+    id: "JAE-0029",
+    username: "Vana",
+    handle: "@Hirandombeetch",
+    handleUrl: "https://x.com/Hirandombeetch",
+    message: "Happy birthday beloved Jaeshin!! I hope you celebrate with your boy Nok! 🥹🫶🖤",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 9
+  },
+  {
+    id: "JAE-0030",
+    username: "AnonymousGeumdong6",
+    handle: "",
+    handleUrl: "",
+    message: "bình thường hay ghẹo chàng, nhưng này hôm nay cho em nịnh chàng một hôm nhé, HPBD Jaeshin, cdang của em 🫶❤️🐾",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 3
+  },
+  {
+    id: "JAE-0031",
+    username: "✨",
+    handle: "",
+    handleUrl: "",
+    message: "재신아, 생일 정말 축하해. ❤️\n \n진심으로, 내 마음 깊은 곳에 언제나 귀야곡을 소중히 간직하고 있어.\n우리 다시 만난 지 정말 오래된 것 같아.\n하지만 머지않아, 우리가 다시 만날 그날이 꼭 올 거라고 믿어.\n \n"+
+             "작가님들과 모든 귀야곡 팬분들께도 전하고 싶어요.\n이 이야기를 함께 즐기고, 서로 이야기를 나눌 수 있어서 정말 행복해요.\n앞으로도 우리 모두 늘 건강하고 행복했으면 좋겠습니다. 🥹❤️💚\n \n"+
+             "이 사진은 제가 올해 여름에 바다에 갔을 때 찍은 사진이에요. 아마 랜턴과는 아무런 상관이 없겠지만, 그냥 제가 그들을 정말 많이 그리워하고 있다는 말을 하고 싶었어요. 그저 그뿐이에요.\n \n"+
+             "To the organizers, thank you so much for giving everyone the chance to light lanterns for Jaeshin.\n \n"+
+             "Yêu The Ghost's Nocturne, Yêu JaeNok, Yêu Geumdong.\nHẹn ngày ta tương phùng.",
+    image: "images/Jae-031.jpeg",
+    type: "photo",
+    scene: 4,
+    slot: 4
+  },
+  {
+    id: "JAE-0032",
+    username: "AnonymousGeumdong7",
+    handle: "",
+    handleUrl: "",
+    message: "Chúc mừng sinh nhật cụ Cún của em bé Nok",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 5
+  },
+  {
+    id: "JAE-0033",
+    username: "i am brick",
+    handle: "",
+    handleUrl: "",
+    message: "Happy Birthday Jaeshin 😘😘😘",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 6
+  },
+  {
+    id: "JAE-0034",
+    username: "AnonymousGeumdong8",
+    handle: "",
+    handleUrl: "",
+    message: "Happy birthday Jaeshin and please come back soon!",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 7
+  },
+  {
+    id: "JAE-0035",
+    username: "AnonymousGeumdong9",
+    handle: "",
+    handleUrl: "",
+    message: "Chang oi thiep nho chang lam",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 8
+  },
+  {
+    id: "JAE-0036",
+    username: "りん",
+    handle: "@rin_i2d",
+    handleUrl: "https://x.com/rin_i2d",
+    message: "재신 생일 축하해요！🎉\n많은 행복이 찾아오기를 바라요❤️💚🐾",
+    image: "images/Jae-036.jpeg",
+    type: "illustration",
+    scene: 4,
+    slot: 2
+  },
 ];
 
 const slotMap = {
@@ -328,6 +431,11 @@ const slotMap = {
   3: [
     { x: 7, y: 38 }, { x: 21, y: 34 }, { x: 38, y: 30 },
     { x: 52, y: 38 }, { x: 71, y: 35 }, { x: 94, y: 32 }
+  ],
+  4: [
+    { x: 10, y: 44, scale: 0.9 }, { x: 30, y: 44, scale: 0.9 }, { x: 50, y: 44, scale: 0.9 }, { x: 70, y: 44, scale: 0.9 },
+    { x: 35, y: 55, scale: 0.7 }, { x: 48, y: 52, scale: 0.7 }, { x: 61, y: 48, scale: 0.7 },
+    { x: 54, y: 75, scale: 0.6 }, { x: 66, y: 75, scale: 0.6 }, { x: 78, y: 75, scale: 0.6 }, { x: 90, y: 75, scale: 0.6 }
   ]
 };
 
