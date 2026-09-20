@@ -450,9 +450,9 @@ const lanternPosts = [
   },
   {
     id: "JAE-0040",
-    username: "りん",
-    handle: "@rin_i2d",
-    handleUrl: "https://x.com/rin_i2d",
+    username: "ohyoii",
+    handle: "@ohyoii2525",
+    handleUrl: "https://x.com/ohyoii2525",
     message: "Jaeshin HappyBirthday！！\n \n今年もお誕生日をお祝い出来て嬉しいです。\n \n先生素敵な作品をありがとうございます。\n \n ohyoii",
     image: "images/Jae-040.jpeg",
     type: "photo",
