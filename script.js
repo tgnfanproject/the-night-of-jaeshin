@@ -453,11 +453,22 @@ const lanternPosts = [
     username: "ohyoii",
     handle: "@ohyoii2525",
     handleUrl: "https://x.com/ohyoii2525",
-    message: "Jaeshin HappyBirthday！！\n \n今年もお誕生日をお祝い出来て嬉しいです。\n \n先生素敵な作品をありがとうございます。\n \n ohyoii",
+    message: "Jaeshin HappyBirthday！！\n今年もお誕生日をお祝い出来て嬉しいです\n先生素敵な作品をありがとうございます\nジェジンとノクの幸せを祈って♡",
     image: "images/Jae-040.jpeg",
     type: "photo",
     scene: 2,
     slot: 12
+  },
+  {
+    id: "JAE-0041",
+    username: "ohyoii",
+    handle: "@ohyoii2525",
+    handleUrl: "https://x.com/ohyoii2525",
+    message: "Jaeshin HappyBirthday♪",
+    image: "images/Jae-041.jpeg",
+    type: "photo",
+    scene: 3,
+    slot: 7
   },
 ];
 
@@ -475,7 +486,8 @@ const slotMap = {
   ],
   3: [
     { x: 7, y: 38 }, { x: 21, y: 34 }, { x: 38, y: 30 },
-    { x: 52, y: 38 }, { x: 71, y: 35 }, { x: 94, y: 32 }
+    { x: 52, y: 38 }, { x: 71, y: 35 }, { x: 94, y: 32 },
+    { x: 10, y: 78, ground: true }
   ],
   4: [
     { x: 10, y: 44, scale: 0.9 }, { x: 30, y: 44, scale: 0.9 }, { x: 50, y: 44, scale: 0.9 }, { x: 70, y: 44, scale: 0.9 },
