@@ -237,7 +237,7 @@ const lanternPosts = [
   },
   {
     id: "JAE-0021",
-    username: "AnonymousGeumdong3",
+    username: "AnonymousGeumdong4",
     handle: "",
     handleUrl: "",
     message: "Happy birthday, Jaeshin!💚❤️🐾",
@@ -312,6 +312,127 @@ const lanternPosts = [
     scene: 3,
     slot: 5
   },
+  {
+    id: "JAE-0028",
+    username: "AnonymousGeumdong4",
+    handle: "",
+    handleUrl: "",
+    message: "",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 1
+  },
+  {
+    id: "JAE-0029",
+    username: "AnonymousGeumdong4",
+    handle: "",
+    handleUrl: "",
+    message: "",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 2
+  },
+  {
+    id: "JAE-0030",
+    username: "AnonymousGeumdong4",
+    handle: "",
+    handleUrl: "",
+    message: "",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 3
+  },
+  {
+    id: "JAE-0031",
+    username: "AnonymousGeumdong4",
+    handle: "",
+    handleUrl: "",
+    message: "",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 4
+  },
+  {
+    id: "JAE-0032",
+    username: "AnonymousGeumdong4",
+    handle: "",
+    handleUrl: "",
+    message: "",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 5
+  },
+  {
+    id: "JAE-0033",
+    username: "AnonymousGeumdong4",
+    handle: "",
+    handleUrl: "",
+    message: "",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 6
+  },
+  {
+    id: "JAE-0034",
+    username: "AnonymousGeumdong4",
+    handle: "",
+    handleUrl: "",
+    message: "",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 7
+  },
+  {
+    id: "JAE-0035",
+    username: "AnonymousGeumdong4",
+    handle: "",
+    handleUrl: "",
+    message: "",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 8
+  },
+  {
+    id: "JAE-0036",
+    username: "AnonymousGeumdong4",
+    handle: "",
+    handleUrl: "",
+    message: "",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 9
+  },
+  {
+    id: "JAE-0037",
+    username: "AnonymousGeumdong4",
+    handle: "",
+    handleUrl: "",
+    message: "",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 10
+  },
+  {
+    id: "JAE-0038",
+    username: "AnonymousGeumdong4",
+    handle: "",
+    handleUrl: "",
+    message: "",
+    image: "",
+    type: "message",
+    scene: 4,
+    slot: 11
+  },
 ];
 
 const slotMap = {
@@ -328,6 +449,11 @@ const slotMap = {
   3: [
     { x: 7, y: 38 }, { x: 21, y: 34 }, { x: 38, y: 30 },
     { x: 52, y: 38 }, { x: 71, y: 35 }, { x: 94, y: 32 }
+  ],
+  4: [
+    { x: 10, y: 50, scale: 0.8 }, { x: 30, y: 50, scale: 0.8 }, { x: 50, y: 50, scale: 0.8 }, { x: 70, y: 50, scale: 0.8 },
+    { x: 35, y: 59, scale: 0.7 }, { x: 48, y: 57, scale: 0.7 }, { x: 61, y: 55, scale: 0.7 },
+    { x: 50, y: 75, scale: 0.6 }, { x: 62, y: 61, scale: 0.6 }, { x: 74, y: 75, scale: 0.6 }, { x: 86, y: 75, scale: 0.6 }
   ]
 };
 
