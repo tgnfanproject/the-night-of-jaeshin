@@ -470,13 +470,57 @@ const lanternPosts = [
     scene: 3,
     slot: 7
   },
+  {
+    id: "JAE-0042",
+    username: "KIYOMI",
+    handle: "@KIYOMI125",
+    handleUrl: "https://x.com/KIYOMI125",
+    message: "Jaeshin❤️\nHappy Birthday 🎂 Wish you all the best🐾\n \n귀야곡 forever🪭\nJaeNok forever❤️💚",
+    image: "images/Jae-042.jpeg",
+    type: "photo",
+    scene: 3,
+    slot: 8
+  },
+  {
+    id: "JAE-0043",
+    username: "jaythonglor",
+    handle: "@jaythonglor",
+    handleUrl: "https://x.com/jaythonglor",
+    message: "Happy Birthday to the apple of my eye❤️\nI’m so grateful you’re here in this world.\nBig thanks to C.R Jade Nim and Ananas Nim for bringing you to life 🤍  you’ve become my joy, my motivation, my safe place, and so much more through both the highs and lows.\nForever thankful for you, Jaechin 💫❤️",
+    image: "images/Jae-043.jpeg",
+    type: "photo",
+    scene: 3,
+    slot: 9
+  },
+  {
+    id: "JAE-0044",
+    username: "EE❤️💚",
+    handle: "@eeminnim",
+    handleUrl: "https://x.com/eeminnim",
+    message: "재신아❤️🖤\n영원히 행복하길 바라❤️💚",
+    image: "images/Jae-044.jpeg",
+    type: "photo",
+    scene: 4,
+    slot: 13
+  },
+  {
+    id: "JAE-0045",
+    username: "AnonymousGeumdong10",
+    handle: "",
+    handleUrl: "",
+    message: "My Lord, you are the tempest that stirs my soul. The shadow i willingly loose myself in. Your gaze in abyss of unmatched grandeur. How is it that the world dares to exist under the same heavens as you? Youre a symphony of chaos, a masterpiece of beauty so unyielding it renders everything else as insignificant. My heart is yours to command, my devotion boundless as I revel in the magnificence that is you.",
+    image: "",
+    type: "message",
+    scene: 1,
+    slot: 11
+  },
 ];
 
 const slotMap = {
   1: [
     { x: 52, y: 28 }, { x: 64, y: 28 }, { x: 78, y: 28 }, { x: 90, y: 28 },
     { x: 40, y: 42, scale: 0.7 }, { x: 52, y: 42, scale: 0.7 }, { x: 63, y: 42, scale: 0.7 }, { x: 74, y: 42, scale: 0.7 },
-    { x: 17, y: 75, scale: 1.3, ground: true }, { x: 42, y: 80, scale: 1.3, ground: true }
+    { x: 17, y: 75, scale: 1.3, ground: true }, { x: 42, y: 80, scale: 1.3, ground: true },{ x: 10, y: 42, scale: 0.7 }
   ],
   2: [
     { x: 50, y: 35, scale: 0.6 }, { x: 63, y: 34, scale: 0.6 }, { x: 75, y: 33, scale: 0.6 }, { x: 87, y: 32, scale: 0.6 },
@@ -487,12 +531,12 @@ const slotMap = {
   3: [
     { x: 7, y: 38 }, { x: 21, y: 34 }, { x: 38, y: 30 },
     { x: 52, y: 38 }, { x: 71, y: 35 }, { x: 94, y: 32 },
-    { x: 10, y: 73, ground: true }
+    { x: 10, y: 73, ground: true },{ x: 25, y: 80, ground: true },{ x: 40, y: 87, ground: true }
   ],
   4: [
     { x: 10, y: 44, scale: 0.9 }, { x: 30, y: 44, scale: 0.9 }, { x: 50, y: 44, scale: 0.9 }, { x: 70, y: 44, scale: 0.9 },
     { x: 35, y: 55, scale: 0.7 }, { x: 48, y: 52, scale: 0.7 }, { x: 61, y: 48, scale: 0.7 },
-    { x: 54, y: 75, scale: 0.6 }, { x: 66, y: 75, scale: 0.6 }, { x: 78, y: 75, scale: 0.6 }, { x: 90, y: 75, scale: 0.6 }, { x: 44, y: 75, scale: 0.6 }
+    { x: 54, y: 75, scale: 0.6 }, { x: 66, y: 75, scale: 0.6 }, { x: 78, y: 75, scale: 0.6 }, { x: 90, y: 75, scale: 0.6 }, { x: 44, y: 75, scale: 0.6 },{ x: 34, y: 75, scale: 0.6 }
   ]
 };
 
